@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import tw from 'twin.macro'
 
-function App() {
+const AppContainer = tw.div`grid justify-center min-w-full min-h-screen max-w-sm pt-8`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppContainer>
+      <Header
+        text="minesweeper"
+        feature="flag"
+        firstAction="alt"
+        secondAction="click"
+      />
+    </AppContainer>
+  )
 }
 
-export default App;
+export default App
