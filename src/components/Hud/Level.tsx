@@ -5,7 +5,7 @@ export interface LevelProps {
   levels: string[]
 }
 
-const Select = tw.select`m-0 h-8 border border-slate-200 bg-slate-100`
+const Select = tw.select`m-0 p-2 text-slate-100 border border-slate-800 bg-slate-600`
 const Option = tw.option`font-normal block whitespace-nowrap h-6 p-2`
 
 const Level = ({ levels }: LevelProps) => {

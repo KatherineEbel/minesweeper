@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import tw from 'twin.macro'
 
-const Button = tw.button`text-xl cursor-pointer border border-slate-800 bg-slate-600`
+const Button = tw.button`text-xl cursor-pointer border border-slate-800 bg-slate-600 p-1`
 
 export interface ResetProps {
   onReset: () => void
@@ -19,7 +19,7 @@ const Reset = ({ onReset }: ResetProps) => {
   }
 
   return (
-    <Button onMouseDown={handleReset} onMouseUp={onMouseUp}>
+    <Button onMouseDown={handleReset} onMouseUp={onMouseUp} onMouseLeave={onMouseUp}>
       {mouseDown ? '😲' : '🙂'}
     </Button>
   )
