@@ -169,7 +169,6 @@ describe('MineField', () => {
       const mines = 25
       const probability = mines / (size * size)
       const mineField = MineSweeper.buildField(size, probability)
-      console.table(mineField)
       const flatField = mineField.flat()
       expect(flatField.filter((cell) => cell === bomb)).toHaveLength(25)
     })

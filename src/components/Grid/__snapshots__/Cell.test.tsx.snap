@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell Component onClick and onContextMenu handlers called for active cells 1`] = `
+<DocumentFragment>
+  <div
+    class="cell-1-1 css-1ywq03a"
+    type="10"
+  />
+</DocumentFragment>
+`;

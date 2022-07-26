@@ -1,6 +1,11 @@
 import { Cell, CellState, Coordinates, Field, Neighbors } from '../types'
 
+export const isActive = (cell: Cell): boolean => {
+  return [CellState.hidden, CellState.flag, CellState.weakFlag].includes(cell)
+}
+
 export const exists = ([row, col]: Coordinates, field: Field): boolean => {
+
   return field[row] !== undefined && field[row][col] !== undefined
 }
 

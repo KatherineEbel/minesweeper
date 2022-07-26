@@ -31,12 +31,12 @@ CellBomb.args = {
 
 export const CellWeakFlag = Template.bind({})
 CellWeakFlag.args = {
-  type: CellState.weakMark
+  type: CellState.weakFlag
 }
 
 export const CellFlag = Template.bind({})
 CellFlag.args = {
-  type: CellState.mark
+  type: CellState.flag
 }
 
 export const CellWithOne = Template.bind({})
