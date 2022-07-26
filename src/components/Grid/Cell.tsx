@@ -1,8 +1,8 @@
 import tw, {styled} from 'twin.macro'
-import {Cell as CellType, CellState, Coordinates } from '@/types'
+import {Cell as CellType, CellState, Coordinates } from '../../types/index'
 import React from 'react'
-import {isActive} from '@/helpers/field'
-import {useMouseDown} from '@/hooks/useMouseDown'
+import {isActive} from '../../helpers/field'
+import {useMouseDown} from '../../hooks/useMouseDown'
 
 const transparent = 'rgba(0,0,0.0)'
 const colors: { [key in CellType ]: string} = {

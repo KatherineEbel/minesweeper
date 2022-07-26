@@ -1,6 +1,6 @@
 import React from 'react'
 import {Meta, Story} from '@storybook/react'
-import Grid, {GridProps} from '@/components/Grid/Grid'
+import Grid, {GridProps} from './Grid'
 
 export default {
   title: 'Grid/Grid',

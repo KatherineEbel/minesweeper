@@ -1,7 +1,7 @@
-import Cell from '@/components/Grid/Cell'
-import {Coordinates, Cell as CellType} from '@/types'
+import Cell from '../../components/Grid/Cell'
+import {Coordinates, Cell as CellType} from '../../types/index'
 import {createEvent, fireEvent, render } from '@testing-library/react'
-import {isActive} from '@/helpers/field'
+import {isActive} from '../../helpers/field'
 
 describe('Cell Component', function () {
   const coords: Coordinates = [1, 1]

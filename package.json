@@ -65,9 +65,6 @@
         "lines": 90,
         "statements": 90
       }
-    },
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
     }
   },
   "devDependencies": {
