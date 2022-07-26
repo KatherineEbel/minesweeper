@@ -173,4 +173,107 @@ describe('MineField', () => {
       expect(flatField.filter((cell) => cell === bomb)).toHaveLength(25)
     })
   })
+
+  describe('openCell', function () {
+    describe('losing', () => {
+      test('open cell with bomb', () => {
+        const playerField = [
+          [hidden, hidden],
+          [hidden, hidden],
+        ]
+        const gameField: Field = [
+          [1, 1],
+          [1, bomb],
+        ]
+        expect(() => MineSweeper.openCell([1,1], playerField, gameField)).toThrow('Game Over')
+      })
+    })
+
+    describe('open cell with number', () => {
+      test('open cell with CellState 1', () => {
+        const playerField = [
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+        ]
+        const gameField: Field = [
+          [1, 1, 0],
+          [9, 1, 0],
+          [1, 1, 0],
+        ]
+
+        const actual = MineSweeper.openCell([1,1], playerField, gameField)
+        expect(actual).toStrictEqual([
+          [hidden, hidden, hidden],
+          [hidden, 1, hidden],
+          [hidden, hidden, hidden],
+        ])
+      })
+      test('open cell with CellState 3', () => {
+        const playerField = [
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+        ]
+        const gameField: Field = [
+          [9, 2, 0],
+          [9, 3, 0],
+          [9, 2, 0],
+        ]
+
+        const actual = MineSweeper.openCell([1,1], playerField, gameField)
+        expect(actual).toStrictEqual([
+          [hidden, hidden, hidden],
+          [hidden, 3, hidden],
+          [hidden, hidden, hidden],
+        ])
+      })
+    })
+
+    describe('open empty cell', () => {
+      test('3x3 field', () => {
+        const playerField = [
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+          [hidden, hidden, hidden],
+        ]
+        const gameField: Field = [
+          [1, 1, 0],
+          [9, 1, 0],
+          [1, 1, 0],
+        ]
+        const actual = MineSweeper.openCell([1,2], playerField, gameField)
+        expect(actual).toStrictEqual([
+          [hidden, 1, 0],
+          [hidden, 1, 0],
+          [hidden, 1, 0],
+        ])
+      })
+
+      test('5x5 field', () => {
+        const playerField = [
+          [hidden, hidden, hidden, hidden, hidden],
+          [hidden, hidden, hidden, hidden, hidden],
+          [hidden, hidden, hidden, hidden, hidden],
+          [hidden, hidden, hidden, hidden, hidden],
+          [hidden, hidden, hidden, hidden, hidden],
+        ]
+        const gameField: Field = [
+          [9, 9, 1, 1, 0],
+          [9, 3, 1, 0, 0],
+          [1, 1, 0, 1, 1],
+          [0, 0, 0, 1, 9],
+          [0, 0, 0, 1, 1]
+        ]
+        const actual = MineSweeper.openCell([2, 2], playerField, gameField)
+        expect(actual).toStrictEqual([
+          [hidden, hidden, 1, 1, 0],
+          [hidden, 3, 1, 0, 0],
+          [1, 1, 0, 1, 1],
+          [0, 0, 0, 1, hidden],
+          [0, 0, 0, 1, hidden],
+        ])
+      })
+    })
+  })
 })

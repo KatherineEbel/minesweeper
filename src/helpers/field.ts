@@ -4,6 +4,10 @@ export const isActive = (cell: Cell): boolean => {
   return [CellState.hidden, CellState.flag, CellState.weakFlag].includes(cell)
 }
 
+const isBomb = (cell: Cell): boolean => cell === CellState.bomb
+const isEmpty = (cell: Cell): boolean => cell === CellState.empty
+const isHidden = (cell: Cell): boolean => cell === CellState.hidden
+
 export const exists = ([row, col]: Coordinates, field: Field): boolean => {
 
   return field[row] !== undefined && field[row][col] !== undefined
@@ -59,5 +63,28 @@ export const MineSweeper = {
       }
     })
     return field
+  },
+  openCell: ([row, col]: Coordinates, playerField: Field, gameField: Field): Field => {
+    const gameCell = gameField[row][col]
+    if (isBomb(gameCell)) throw new Error('Game Over')
+    if (isEmpty(gameCell)) {
+      playerField[row][col] = gameCell
+      const neighbors = getNeighbors([row,col])
+      Object.values(neighbors).forEach(neighbor => {
+        if (exists(neighbor, gameField)) {
+          const [r, c] = neighbor
+          const gameCell = gameField[r][c]
+          const playerCell = playerField[r][c]
+          if (isEmpty(gameCell) && isHidden(playerCell)) {
+            playerField = MineSweeper.openCell(neighbor, playerField, gameField)
+          }
+          if (gameCell < CellState.bomb) {
+            playerField[r][c] = gameCell
+          }
+        }
+      })
+    }
+    playerField[row][col] = gameCell
+    return playerField
   },
 }
