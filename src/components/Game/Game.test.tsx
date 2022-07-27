@@ -96,13 +96,47 @@ describe('Game', () => {
 
       })
     })
+
+    describe('winning', () => {
+      test('beginner', () => {
+        const {container} = render(<Game/>)
+
+        // clear empty
+        userEvent.click(container.querySelector(`.cell-${0}-${0}`)!)
+        userEvent.click(container.querySelector(`.cell-${0}-${8}`)!)
+        userEvent.click(container.querySelector(`.cell-${8}-${8}`)!)
+        // flag mines
+        const mineCoords = [[0, 4], [2, 4], [2, 8], [4, 1], [5, 3], [5, 6], [6, 2], [6, 5], [7, 5], [8, 3]]
+        mineCoords.forEach(coord => {
+          const [row, col] = coord
+          userEvent.click(container.querySelector(`.cell-${row}-${col}`)!, {button: 2})
+        })
+        // select hidden
+        let hidden = screen.queryAllByRole('cell', {name: String(CellState.hidden)})
+        hidden.forEach(el => userEvent.click(el))
+        expect(screen.queryAllByRole('cell', {name: String(CellState.hidden)})).toHaveLength(0)
+        screen.getByText('😎')
+      })
+      /*
+      *
+          [0, 0, 0, 1, 9, 1, 0, 0, 0],
+          [0, 0, 0, 2, 2, 2, 0, 1, 1],
+          [0, 0, 0, 1, 9, 1, 0, 1, 9],
+          [1, 1, 1, 1, 1, 1, 0, 1, 1],
+          [1, 9, 2, 1, 1, 1, 1, 1, 0],
+          [1, 2, 3, 9, 2, 2, 9, 1, 0],
+          [0, 1, 9, 2, 3, 9, 3, 1, 0],
+          [0, 1, 2, 2, 3, 9, 2, 0, 0],
+          [0, 0, 1, 9, 2, 1, 1, 0, 0],
+      * */
+    })
   })
 
   describe('onContextMenu', () => {
     test('flagging hidden cell', () => {
-      const { container } = render(<Game/>)
-      userEvent.click(container.querySelector('.cell-0-4')!, { button: 2})
-      expect(screen.getAllByRole('cell', { name: String(CellState.flag)})).toHaveLength(1)
+      const {container} = render(<Game/>)
+      userEvent.click(container.querySelector('.cell-0-4')!, {button: 2})
+      expect(screen.getAllByRole('cell', {name: String(CellState.flag)})).toHaveLength(1)
     })
   })
 })

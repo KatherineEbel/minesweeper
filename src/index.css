@@ -4,6 +4,14 @@
 
 @layer base {
     body {
-        @apply bg-slate-900 text-slate-100;
+        @apply min-h-screen flex flex-col place-items-center bg-slate-900 text-slate-100;
     }
+}
+
+.attribution {
+    @apply mt-auto pb-4
+}
+
+.attribution a:last-of-type {
+    @apply text-emerald-300
 }

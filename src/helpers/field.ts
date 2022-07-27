@@ -20,6 +20,7 @@ export const isActive = (cell: Cell): boolean => {
 export const isBomb = (cell: Cell): boolean => cell === CellState.bomb
 export const isEmpty = (cell: Cell): boolean => cell === CellState.empty
 export const isHidden = (cell: Cell): boolean => cell === CellState.hidden
+export const isFlag = (cell: Cell): boolean => cell === CellState.flag
 
 export const exists = ([row, col]: Coordinates, field: Field): boolean => {
 

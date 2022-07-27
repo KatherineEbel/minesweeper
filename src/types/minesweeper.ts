@@ -1,5 +1,5 @@
-import {Cell, CellState } from './cell'
-import {Coordinates, exists, Field, getNeighbors, isBomb, isEmpty, isHidden} from '../helpers/field'
+import {Cell, CellState} from './cell'
+import {Coordinates, exists, Field, getNeighbors, isBomb, isEmpty, isFlag, isHidden} from '../helpers/field'
 
 export const MineSweeper = {
   buildEmpty: (size: number, state: Cell = CellState.empty): Field => {
@@ -44,7 +44,7 @@ export const MineSweeper = {
     playerField[row][col] = gameCell
     if (isBomb(gameCell)) throw new Error('Game Over')
     if (isEmpty(gameCell)) {
-      const neighbors = getNeighbors([row,col])
+      const neighbors = getNeighbors([row, col])
       Object.values(neighbors).forEach(neighbor => {
         if (exists(neighbor, gameField)) {
           const [r, c] = neighbor
@@ -61,10 +61,15 @@ export const MineSweeper = {
     }
     return playerField
   },
+  /**
+   *
+   * @param coords
+   * @param playerField
+   */
   setFlag: (coords: Coordinates, playerField: Field): Field => {
     const [row, col] = coords
     const cell = playerField[row][col]
-    const { flag, weakFlag, hidden } = CellState
+    const {flag, weakFlag, hidden} = CellState
     switch (cell) {
       case flag:
         playerField[row][col] = weakFlag
@@ -75,8 +80,38 @@ export const MineSweeper = {
       case hidden:
         playerField[row][col] = flag
         break
-      default: return playerField
+      default:
+        return playerField
     }
     return playerField
-  }
+  },
+  /**
+   *
+   * @param playerField
+   * @param gameField
+   * @returns [boolean, number]
+   */
+  detectSolved: (playerField: Field, gameField: Field): [boolean, number] => {
+    const {flag, weakFlag} = CellState
+    let [bombCount, flagCount, detectedBombs, hiddenCount] = [0,0,0,0];
+    for (const row of gameField.keys()) {
+      for (const col of gameField[row].keys()) {
+        const gameCell = gameField[row][col]
+        const playerCell = playerField[row][col]
+        const bombFound = isBomb(gameCell)
+        if (bombFound) {
+          bombCount++
+          if (isFlag(playerCell)) detectedBombs++
+        }
+        if (isHidden(playerCell)) {
+          hiddenCount++
+        }
+        if ([flag, weakFlag].includes(playerCell)) {
+          flagCount++
+        }
+      }
+    }
+    const solved = bombCount === detectedBombs &&  hiddenCount === 0
+    return [solved, flagCount]
+  },
 }

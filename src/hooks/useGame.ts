@@ -15,9 +15,17 @@ export const useGame = () => {
   const [playerField, setPlayerField] = useState<Field>(MineSweeper.buildEmpty(size, CellState.hidden))
   const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
 
+  const checkWon = (field: Field) => {
+    const [solved] = MineSweeper.detectSolved(field, gameField)
+    if (solved) setWon(true)
+  }
+
+
   const onClick = (coords: Coordinates) => {
+    if (won !== null) return
     try {
       const updatedPlayerField = MineSweeper.openCell(coords, playerField, gameField)
+      checkWon(updatedPlayerField)
       setPlayerField([...updatedPlayerField])
     } catch (e) {
       setPlayerField([...gameField])
@@ -35,7 +43,8 @@ export const useGame = () => {
   }
 
   const onContextMenu = (coords: Coordinates) => {
-    const updatedPlayerField = MineSweeper.setFlag(coords, playerField, gameField)
+    const updatedPlayerField = MineSweeper.setFlag(coords, playerField)
+    checkWon(updatedPlayerField)
     setPlayerField([...updatedPlayerField])
   }
 
