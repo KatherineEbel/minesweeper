@@ -17,7 +17,7 @@ const Container = styled.div<ContainerProps>`
   position: absolute;
   transform: translate(-50%, -50%) scale(${({won}) => won === null ? 0 : 1});
   transition: transform 500ms ease-in-out;
-  ${tw`rounded-full bg-slate-800 shadow-xl`}
+  ${tw`rounded-full bg-slate-800 shadow-xl cursor-pointer`}
 `
 
 interface GameOverProps extends ContainerProps {
@@ -25,8 +25,10 @@ interface GameOverProps extends ContainerProps {
 }
 
 const GameOver = ({onClick, won}: GameOverProps) => {
-  return (<Container onClick={onClick} won={won}>
+  return (<Container won={won}>
+    <span onClick={onClick} className='hover:rotate-[360deg] hover:scale-150 transition-transform duration-500'>
     {won ? '😎' : '🤕'}
+    </span>
   </Container>)
 }
 

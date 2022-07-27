@@ -26,7 +26,7 @@ const Game = () => {
       const updatedPlayerField = MineSweeper.openCell(coords, playerField, gameField)
       setPlayerField([...updatedPlayerField])
     } catch (e) {
-      console.log(e)
+      setPlayerField([...gameField])
       setWon(false)
     }
   }
@@ -47,6 +47,11 @@ const Game = () => {
     setGameField([...buildGameField(newLevel, newSize, mineCount)])
   }
 
+  const reset = () => {
+    resetFields()
+    setWon(null)
+  }
+
   return <GameWrapper>
     <Header
       text="minesweeper"
@@ -57,7 +62,7 @@ const Game = () => {
     <Hud time={'000'} levels={GameLevels} mines={'010'} onReset={resetFields}
          defaultLevel={level} onChangeLevel={onChangeLevel}
     />
-    <GameOver onClick={() => null} won={won}/>
+    <GameOver onClick={reset} won={won}/>
     <Grid field={playerField} onClick={onClick} onContextMenu={coords => console.log(coords)}/>
   </GameWrapper>
 }

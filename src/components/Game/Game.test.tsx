@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react'
+import {render, screen } from '@testing-library/react'
 import Game from './Game'
 import userEvent from '@testing-library/user-event'
 import { CellState} from '../../types/cell'
@@ -78,6 +78,23 @@ describe('Game', () => {
       expect(screen.queryAllByRole('cell', { name: String(CellState.empty)})).toHaveLength(9)
       userEvent.click(screen.getByRole('button'))
       expect(screen.queryAllByRole('cell', { name: String(CellState.hidden)})).toHaveLength(81)
+    })
+  })
+
+  describe('GameOver', function () {
+    describe('losing', () => {
+      test('clicking game over popup resets game', async () => {
+        const {container} = render(<Game/>)
+        userEvent.click(container.querySelector('.cell-0-4')!)
+        const gameOverPopup = screen.getByText('🤕')
+        expect(gameOverPopup).toBeInTheDocument()
+        expect(screen.queryAllByRole('cell', { name: String(CellState.hidden)})).toHaveLength(0)
+        userEvent.click(gameOverPopup)
+        expect(gameOverPopup.parentElement).toHaveStyle('transform: translate(-50%, -50%) scale(0)')
+        const hiddenCells = screen.getAllByRole('cell', {name: String(CellState.hidden)})
+        expect(hiddenCells).toHaveLength(81)
+
+      })
     })
   })
 })
