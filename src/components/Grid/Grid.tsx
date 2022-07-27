@@ -1,7 +1,7 @@
 import React from 'react'
 import {styled} from 'twin.macro'
-import {Coordinates, Field} from '../../types'
 import Cell from './Cell'
+import {Coordinates, Field} from '../../helpers/field'
 
 export interface GridProps {
   field: Field
@@ -15,7 +15,7 @@ const GridContainer = styled.div<{size: number}>`
 `
 
 const Grid = ({field, ...rest}: GridProps) => {
-  return <GridContainer size={field.length}>
+  return <GridContainer className='mine-field' size={field.length}>
     {field.map((row: any[], i: any) => {
       return row.map((col, j) => {
         return <Cell key={`${i}-${j}`} type={col} coords={[i, j]} {...rest}/>

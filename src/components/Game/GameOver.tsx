@@ -1,7 +1,7 @@
 import tw, {styled} from 'twin.macro'
 
 interface ContainerProps {
-  won: boolean
+  won: boolean | null
 }
 
 const Container = styled.div<ContainerProps>`
@@ -15,7 +15,8 @@ const Container = styled.div<ContainerProps>`
   font-size: 5rem;
   line-height: 5rem;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(${({won}) => won === null ? 0 : 1});
+  transition: transform 500ms ease-in-out;
   ${tw`rounded-full bg-slate-800 shadow-xl`}
 `
 
@@ -23,8 +24,10 @@ interface GameOverProps extends ContainerProps {
   onClick: () => void
 }
 
-const GameOver = ({onClick, won}: GameOverProps) => (<Container onClick={onClick} won={won}>
-  {won ? '😎' : '🤕'}
-</Container>)
+const GameOver = ({onClick, won}: GameOverProps) => {
+  return (<Container onClick={onClick} won={won}>
+    {won ? '😎' : '🤕'}
+  </Container>)
+}
 
 export default GameOver

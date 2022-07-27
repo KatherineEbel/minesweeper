@@ -1,5 +1,5 @@
 import Cell, {CellProps} from './Cell'
-import { CellState } from '../../types'
+import { CellState } from '../../types/cell'
 import {Meta, Story} from '@storybook/react'
 
 export default {

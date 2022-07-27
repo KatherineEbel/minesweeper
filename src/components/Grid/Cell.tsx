@@ -1,7 +1,7 @@
 import tw, {styled} from 'twin.macro'
-import {Cell as CellType, CellState, Coordinates } from '../../types/index'
+import {Cell as CellType, CellState } from '../../types/cell'
 import React from 'react'
-import {isActive} from '../../helpers/field'
+import {isActive, Coordinates} from '../../helpers/field'
 import {useMouseDown} from '../../hooks/useMouseDown'
 
 const transparent = 'rgba(0,0,0.0)'
@@ -38,7 +38,7 @@ flex items-center justify-center cursor-pointer w-8 h-8 bg-slate-700 border bord
 type HiddenCellProps = Pick<CellProps, 'mouseDown'>
 
 const HiddenCell = styled(CellContainer)<HiddenCellProps>`
-  ${tw`select-none hover:bg-slate-600 transition-all duration-300`}
+  ${tw`select-none hover:bg-slate-600 transition-all duration-300 text-transparent`}
   box-shadow: -3px 3px rgba(0, 0, 0, 0.7), -2px 2px rgba(0, 0, 0, 0.7), -1px 1px rgba(0, 0, 0, 0.7);
   border: 1px solid ${({mouseDown = false}) => mouseDown ? 'transparent' : 'rgba(0,0,0,0.8)'};
 
@@ -52,6 +52,8 @@ const OpenCell = styled(CellContainer)<Pick<CellProps, 'type'>>`
   ${tw`cursor-default border-slate-500`}
   color: ${({ type }) => colors[type as CellType] ?? transparent};
 `
+
+const EmptyCell = styled(OpenCell)`${tw`text-transparent`}`
 
 const StyledFlag = styled.div`
   width: 0;
@@ -85,31 +87,31 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
     if (isActiveCell) rest.onContextMenu(coords)
   }
 
-  const activeProps = {
+  const commonProps = {
     className: `cell-${coords.join('-')}`,
-    mouseDown,
-    onClick,
     onContextMenu,
-    onMouseUp,
-    onMouseDown,
     type,
+    role: 'cell'
   }
 
-  const inactiveProps = {
-    className: activeProps.className,
-    onContextMenu,
-    type
+  const activeProps = {
+    ...commonProps,
+    mouseDown,
+    onClick,
+    onMouseUp,
+    onMouseDown,
   }
+
 
   switch (type) {
     case CellState.empty:
-      return <OpenCell {...inactiveProps}/>
+      return <EmptyCell {...commonProps}>{type}</EmptyCell>
     case CellState.bomb:
-      return <BombFrame {...inactiveProps}>
+      return <BombFrame {...commonProps}>
         <Bomb/>
       </BombFrame>
     case CellState.hidden:
-      return <HiddenCell {...activeProps}/>
+      return <HiddenCell {...activeProps}>{type}</HiddenCell>
     case CellState.flag:
       return <HiddenCell {...activeProps}>
         <Flag/>
@@ -119,7 +121,7 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
         <WeakFlag/>
       </HiddenCell>
     default:
-      return <OpenCell {...inactiveProps}>{type}</OpenCell>
+      return <OpenCell {...commonProps}>{type}</OpenCell>
   }
 }
 

@@ -1,7 +1,7 @@
 import Cell from '../../components/Grid/Cell'
-import {Coordinates, Cell as CellType} from '../../types/index'
+import {Cell as CellType} from '../../types/cell'
 import {createEvent, fireEvent, render } from '@testing-library/react'
-import {isActive} from '../../helpers/field'
+import {isActive, Coordinates} from '../../helpers/field'
 
 describe('Cell Component', function () {
   const coords: Coordinates = [1, 1]
@@ -16,7 +16,7 @@ describe('Cell Component', function () {
   })
 
 
-  test.each(cells.filter(({cell}) => isActive(cell)))('onClick and onContextMenu handlers called for active cells', ({cell, prevented}) => {
+  test.each(cells.filter(({cell}) => isActive(cell)))('onClick and onContextMenu handlers called for active cells', ({cell }) => {
     const props = { coords, onClick: jest.fn(), onContextMenu: jest.fn() }
     const {container } = render(<Cell type={cell } {...props}/>)
     const target = container.querySelector(`.cell-${coords.join('-')}`)!

@@ -1,5 +1,6 @@
-import { Cell, CellState, Field } from '../types'
-import { getNeighbors, MineSweeper } from './field'
+import { Cell, CellState, } from '../types/cell'
+import { MineSweeper } from '../types/minesweeper'
+import { getNeighbors, Field  } from './field'
 
 const { empty, hidden, bomb } = CellState
 
