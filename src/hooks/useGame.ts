@@ -34,6 +34,11 @@ export const useGame = () => {
     })
   }
 
+  const onContextMenu = (coords: Coordinates) => {
+    const updatedPlayerField = MineSweeper.setFlag(coords, playerField, gameField)
+    setPlayerField([...updatedPlayerField])
+  }
+
   const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
     setWon(null)
     setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
@@ -51,6 +56,7 @@ export const useGame = () => {
     playerField,
     onClick,
     onChangeLevel,
+    onContextMenu,
     reset,
   }
 }

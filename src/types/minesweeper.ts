@@ -61,4 +61,22 @@ export const MineSweeper = {
     }
     return playerField
   },
+  setFlag: (coords: Coordinates, playerField: Field): Field => {
+    const [row, col] = coords
+    const cell = playerField[row][col]
+    const { flag, weakFlag, hidden } = CellState
+    switch (cell) {
+      case flag:
+        playerField[row][col] = weakFlag
+        break
+      case weakFlag:
+        playerField[row][col] = hidden
+        break
+      case hidden:
+        playerField[row][col] = flag
+        break
+      default: return playerField
+    }
+    return playerField
+  }
 }

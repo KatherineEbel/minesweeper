@@ -9,7 +9,7 @@ import {useGame} from '../../hooks/useGame'
 
 
 const Game = () => {
-  const { level, won, playerField, onChangeLevel, reset, onClick} = useGame()
+  const { level, won, playerField, onChangeLevel, onContextMenu, reset, onClick} = useGame()
 
   const handleChangeLevel = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChangeLevel(e.target.value as Level)
@@ -18,14 +18,14 @@ const Game = () => {
     <Header
       text="minesweeper"
       feature="flag"
-      firstAction="alt"
+      firstAction="right"
       secondAction="click"
     />
     <Hud time={'000'} levels={GameLevels} mines={'010'} onReset={reset}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />
     <GameOver onClick={reset} won={won}/>
-    <Grid field={playerField} onClick={onClick} onContextMenu={coords => console.log(coords)}/>
+    <Grid field={playerField} onClick={onClick} onContextMenu={onContextMenu}/>
   </GameWrapper>
 }
 

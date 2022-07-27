@@ -13,6 +13,10 @@ const config = {
   mutate: [
     'src/**/*.ts?(x)',
     '!src/**/*@(.test|.spec|Spec|stories|styled|tw).ts?(x)',
+    '!__mocks__',
+    '!__snapshots__',
+    '!reportWebVitals.ts',
+    '!setupTests.ts'
   ]
 };
 export default config;

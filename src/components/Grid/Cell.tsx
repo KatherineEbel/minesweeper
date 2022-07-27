@@ -114,11 +114,15 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
       return <HiddenCell {...activeProps}>{type}</HiddenCell>
     case CellState.flag:
       return <HiddenCell {...activeProps}>
-        <Flag/>
+        <Flag>
+          {type}
+        </Flag>
       </HiddenCell>
     case CellState.weakFlag:
       return <HiddenCell {...activeProps}>
-        <WeakFlag/>
+        <WeakFlag>
+          {type}
+        </WeakFlag>
       </HiddenCell>
     default:
       return <OpenCell {...commonProps}>{type}</OpenCell>
