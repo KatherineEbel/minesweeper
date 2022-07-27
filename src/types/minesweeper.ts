@@ -1,5 +1,5 @@
 import {Cell, CellState} from './cell'
-import {Coordinates, exists, Field, getNeighbors, isBomb, isEmpty, isFlag, isHidden} from '../helpers/field'
+import {Coordinates, exists, Field, getNeighbors, isMine, isEmpty, isFlag, isHidden} from '../helpers/field'
 
 export const MineSweeper = {
   buildEmpty: (size: number, state: Cell = CellState.empty): Field => {
@@ -17,7 +17,7 @@ export const MineSweeper = {
       for (let j = 0; j < size; j++) {
         if (restCellsWithBombs === 0) return mineField
         if (restCellsWithBombs / unprocessedCells > Math.random()) {
-          mineField[i][j] = CellState.bomb
+          mineField[i][j] = CellState.mine
           MineSweeper.incrementNeighbors([i, j], mineField)
           restCellsWithBombs--
         }
@@ -32,7 +32,7 @@ export const MineSweeper = {
       const [row, col] = coords
       if (exists(coords, field)) {
         const cell: Cell = field[row][col]
-        if (cell < CellState.bomb - 1) {
+        if (cell < CellState.mine - 1) {
           field[row][col] += 1
         }
       }
@@ -42,7 +42,7 @@ export const MineSweeper = {
   openCell: ([row, col]: Coordinates, playerField: Field, gameField: Field): Field => {
     const gameCell = gameField[row][col]
     playerField[row][col] = gameCell
-    if (isBomb(gameCell)) throw new Error('Game Over')
+    if (isMine(gameCell)) throw new Error('Game Over')
     if (isEmpty(gameCell)) {
       const neighbors = getNeighbors([row, col])
       Object.values(neighbors).forEach(neighbor => {
@@ -53,7 +53,7 @@ export const MineSweeper = {
           if (isEmpty(gameCell) && isHidden(playerCell)) {
             playerField = MineSweeper.openCell(neighbor, playerField, gameField)
           }
-          if (gameCell < CellState.bomb) {
+          if (gameCell < CellState.mine) {
             playerField[r][c] = gameCell
           }
         }
@@ -93,15 +93,15 @@ export const MineSweeper = {
    */
   detectSolved: (playerField: Field, gameField: Field): [boolean, number] => {
     const {flag, weakFlag} = CellState
-    let [bombCount, flagCount, detectedBombs, hiddenCount] = [0,0,0,0];
+    let [mineCount, flagCount, detectedMines, hiddenCount] = [0,0,0,0];
     for (const row of gameField.keys()) {
       for (const col of gameField[row].keys()) {
         const gameCell = gameField[row][col]
         const playerCell = playerField[row][col]
-        const bombFound = isBomb(gameCell)
-        if (bombFound) {
-          bombCount++
-          if (isFlag(playerCell)) detectedBombs++
+        const mineFound = isMine(gameCell)
+        if (mineFound) {
+          mineCount++
+          if (isFlag(playerCell)) detectedMines++
         }
         if (isHidden(playerCell)) {
           hiddenCount++
@@ -111,7 +111,7 @@ export const MineSweeper = {
         }
       }
     }
-    const solved = bombCount === detectedBombs &&  hiddenCount === 0
+    const solved = mineCount === detectedMines &&  hiddenCount === 0
     return [solved, flagCount]
   },
 }

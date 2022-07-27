@@ -2,21 +2,21 @@ import { Cell, CellState, } from '../types/cell'
 import { MineSweeper } from '../types/minesweeper'
 import { getNeighbors, Field  } from './field'
 
-const { empty, hidden, bomb } = CellState
+const { empty, hidden, mine } = CellState
 
 function partitionField(field: Field) {
   const flatField = field.flat()
   return flatField.reduce(
     (acc, cell: Cell) => {
-      if (cell === bomb) {
-        acc.bombCells.push(cell)
+      if (cell === mine) {
+        acc.mineCells.push(cell)
       } else {
         acc.emptyCells.push(cell)
       }
       return acc
     },
     {
-      bombCells: [] as Cell[],
+      mineCells: [] as Cell[],
       emptyCells: [] as Cell[],
     },
   )
@@ -25,8 +25,8 @@ function partitionField(field: Field) {
 describe('MineField', () => {
   describe('incrementNeighbors', function () {
     test('field with only one item', () => {
-      expect(MineSweeper.incrementNeighbors([0, 0], [[bomb]])).toStrictEqual([
-        [bomb],
+      expect(MineSweeper.incrementNeighbors([0, 0], [[mine]])).toStrictEqual([
+        [mine],
       ])
     })
 
@@ -35,12 +35,12 @@ describe('MineField', () => {
         MineSweeper.incrementNeighbors(
           [0, 0],
           [
-            [bomb, empty],
+            [mine, empty],
             [empty, empty],
           ],
         ),
       ).toStrictEqual([
-        [bomb, 1],
+        [mine, 1],
         [1, 1],
       ])
     })
@@ -50,13 +50,13 @@ describe('MineField', () => {
         MineSweeper.incrementNeighbors(
           [0, 0],
           [
-            [bomb, empty],
-            [empty, bomb],
+            [mine, empty],
+            [empty, mine],
           ],
         ),
       ).toStrictEqual([
-        [bomb, 1],
-        [1, bomb],
+        [mine, 1],
+        [1, mine],
       ])
     })
   })
@@ -144,13 +144,13 @@ describe('MineField', () => {
     })
 
     test('smallest possible field with mine', () => {
-      expect(MineSweeper.buildField(1, 1)).toStrictEqual([[bomb]])
+      expect(MineSweeper.buildField(1, 1)).toStrictEqual([[mine]])
     })
 
     test('2x2 with mines', () => {
       expect(MineSweeper.buildField(2, 1)).toStrictEqual([
-        [bomb, bomb],
-        [bomb, bomb],
+        [mine, mine],
+        [mine, mine],
       ])
     })
 
@@ -159,8 +159,8 @@ describe('MineField', () => {
       const mines = 2
       const probability = mines / (size * size)
       const mineField = MineSweeper.buildField(size, probability)
-      const { bombCells, emptyCells } = partitionField(mineField)
-      expect(bombCells).toHaveLength(2)
+      const { mineCells, emptyCells } = partitionField(mineField)
+      expect(mineCells).toHaveLength(2)
       expect(emptyCells).toHaveLength(2)
       expect(emptyCells).toStrictEqual([2, 2])
     })
@@ -171,20 +171,20 @@ describe('MineField', () => {
       const probability = mines / (size * size)
       const mineField = MineSweeper.buildField(size, probability)
       const flatField = mineField.flat()
-      expect(flatField.filter((cell) => cell === bomb)).toHaveLength(25)
+      expect(flatField.filter((cell) => cell === mine)).toHaveLength(25)
     })
   })
 
   describe('openCell', function () {
     describe('losing', () => {
-      test('open cell with bomb', () => {
+      test('open cell with mine', () => {
         const playerField = [
           [hidden, hidden],
           [hidden, hidden],
         ]
         const gameField: Field = [
           [1, 1],
-          [1, bomb],
+          [1, mine],
         ]
         expect(() => MineSweeper.openCell([1,1], playerField, gameField)).toThrow('Game Over')
       })

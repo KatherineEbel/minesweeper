@@ -70,11 +70,11 @@ const WeakFlag = styled(StyledFlag)`
   border-left: .5rem solid #fcd34d
 `
 
-const Bomb = tw.div`
+const Mine = tw.div`
   rounded-full w-4 h-4 bg-slate-900
 `
 
-const BombFrame = tw(OpenCell)`bg-rose-600`
+const MineFrame = tw(OpenCell)`bg-rose-600`
 
 const Cell = ({type, coords, ...rest}: CellProps) => {
   const [mouseDown, onMouseUp, onMouseDown] = useMouseDown()
@@ -106,10 +106,10 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
   switch (type) {
     case CellState.empty:
       return <EmptyCell {...commonProps}>{type}</EmptyCell>
-    case CellState.bomb:
-      return <BombFrame {...commonProps}>
-        <Bomb/>
-      </BombFrame>
+    case CellState.mine:
+      return <MineFrame {...commonProps}>
+        <Mine/>
+      </MineFrame>
     case CellState.hidden:
       return <HiddenCell {...activeProps}>{type}</HiddenCell>
     case CellState.flag:

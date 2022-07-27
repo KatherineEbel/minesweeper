@@ -17,7 +17,7 @@ export const isActive = (cell: Cell): boolean => {
   return [CellState.hidden, CellState.flag, CellState.weakFlag].includes(cell)
 }
 
-export const isBomb = (cell: Cell): boolean => cell === CellState.bomb
+export const isMine = (cell: Cell): boolean => cell === CellState.mine
 export const isEmpty = (cell: Cell): boolean => cell === CellState.empty
 export const isHidden = (cell: Cell): boolean => cell === CellState.hidden
 export const isFlag = (cell: Cell): boolean => cell === CellState.flag
