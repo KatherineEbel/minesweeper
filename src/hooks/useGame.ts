@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {GameSettings, Level} from '../types/game'
 import {Coordinates, Field} from '../helpers/field'
 import {MineSweeper} from '../types/minesweeper'
@@ -25,10 +25,9 @@ export const useGame = () => {
     }
   }
 
-  const onChangeLevel: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
+  const onChangeLevel = (newLevel: Level) => {
     setWon(null)
     setLevel(() => {
-      const newLevel = e.target.value as Level
       const [size, mines] = GameSettings[newLevel]
       resetFields(newLevel, size, mines)
       return newLevel
