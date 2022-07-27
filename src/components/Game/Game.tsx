@@ -1,57 +1,15 @@
-import {GameLevels, GameSettings, Level} from '../../types/game'
-import {CellState} from '../../types/cell'
-import {Coordinates, Field,} from '../../helpers/field'
+import {GameLevels} from '../../types/game'
 import Header from '../../components/Header/Header'
 import Hud from '../../components/Hud/Hud'
 import Grid from '../../components/Grid/Grid'
-import React, {useState} from 'react'
+import React from 'react'
 import {GameWrapper} from '../../styles'
 import GameOver from './GameOver'
-import {MineSweeper} from '../../types/minesweeper'
+import {useGame} from '../../hooks/useGame'
 
-
-const buildGameField = (level: Level, size: number, mines: number) => {
-  return MineSweeper.buildField(GameSettings[level][0], mines / (size * size))
-}
 
 const Game = () => {
-  const [won, setWon] = useState<boolean | null>(null)
-  const [level, setLevel] = useState<Level>('beginner')
-  const [size, mines] = GameSettings[level]
-  const [playerField, setPlayerField] = useState<Field>(MineSweeper.buildEmpty(size, CellState.hidden))
-  const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
-
-  const onClick = (coords: Coordinates) => {
-    try {
-      const updatedPlayerField = MineSweeper.openCell(coords, playerField, gameField)
-      setPlayerField([...updatedPlayerField])
-    } catch (e) {
-      setPlayerField([...gameField])
-      setWon(false)
-    }
-  }
-
-  const onChangeLevel: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
-    setWon(null)
-    setLevel(() => {
-      const newLevel = e.target.value as Level
-      const [size, mines] = GameSettings[newLevel]
-      resetFields(newLevel, size, mines)
-      return newLevel
-    })
-  }
-
-  const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
-    setWon(null)
-    setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
-    setGameField([...buildGameField(newLevel, newSize, mineCount)])
-  }
-
-  const reset = () => {
-    resetFields()
-    setWon(null)
-  }
-
+  const { level, won, playerField, onChangeLevel, reset, onClick} = useGame()
   return <GameWrapper>
     <Header
       text="minesweeper"
@@ -59,7 +17,7 @@ const Game = () => {
       firstAction="alt"
       secondAction="click"
     />
-    <Hud time={'000'} levels={GameLevels} mines={'010'} onReset={resetFields}
+    <Hud time={'000'} levels={GameLevels} mines={'010'} onReset={reset}
          defaultLevel={level} onChangeLevel={onChangeLevel}
     />
     <GameOver onClick={reset} won={won}/>
