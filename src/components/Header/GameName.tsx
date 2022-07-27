@@ -1,13 +1,11 @@
 import React from 'react'
-import { styled } from 'twin.macro'
+import tw from 'twin.macro'
 
 export interface GameNameProps {
   text: string
 }
 
-const StyledH1 = styled.h1`
-  font-size: 2em;
-`
+const StyledH1 = tw.h1`text-3xl font-display tracking-wider mb-4`
 
 const GameName = ({ text }: GameNameProps) => {
   return <StyledH1>{text}</StyledH1>

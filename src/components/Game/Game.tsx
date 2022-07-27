@@ -9,7 +9,7 @@ import {useGame} from '../../hooks/useGame'
 
 
 const Game = () => {
-  const { level, won, playerField, onChangeLevel, onContextMenu, reset, onClick} = useGame()
+  const { level, won, playing, playerField, onChangeLevel, onContextMenu, reset, shouldClear, onClick} = useGame()
 
   const handleChangeLevel = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChangeLevel(e.target.value as Level)
@@ -21,7 +21,7 @@ const Game = () => {
       firstAction="right"
       secondAction="click"
     />
-    <Hud time={'000'} levels={GameLevels} mines={'010'} onReset={reset}
+    <Hud running={playing} shouldClear={shouldClear} levels={GameLevels} mines={'010'} onReset={reset}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />
     <GameOver onClick={reset} won={won}/>

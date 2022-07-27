@@ -4,9 +4,11 @@ import Counter from './Counter'
 import LevelComponent from './Level'
 import Reset from './Reset'
 import {Level} from '../../types/game'
+import Timer from './Timer'
 
 export interface HudProps {
-  time: string
+  running: boolean
+  shouldClear: boolean
   levels: readonly Level[]
   mines: string
   onReset: () => void
@@ -16,10 +18,10 @@ export interface HudProps {
 
 const HudContainer = tw.header`flex w-full pb-4 items-center justify-between`
 
-const Hud = ({ time, levels, mines, onChangeLevel, onReset}: HudProps) => {
+const Hud = ({ running, shouldClear, levels, mines, onChangeLevel, onReset}: HudProps) => {
   return (
     <HudContainer>
-      <Counter value={time}/>
+      <Timer running={running} shouldClear={shouldClear} />
       <LevelComponent levels={levels} onLevelChange={onChangeLevel}/>
       <Reset onReset={onReset}/>
       <Counter value={mines}/>

@@ -1,4 +1,4 @@
-import {render, screen} from '@testing-library/react'
+import {act, render, screen} from '@testing-library/react'
 import Game from './Game'
 import userEvent from '@testing-library/user-event'
 import {CellState} from '../../types/cell'
@@ -137,6 +137,40 @@ describe('Game', () => {
       const {container} = render(<Game/>)
       userEvent.click(container.querySelector('.cell-0-4')!, {button: 2})
       expect(screen.getAllByRole('cell', {name: String(CellState.flag)})).toHaveLength(1)
+    })
+  })
+
+  describe('timer', () => {
+    test('it should start when cell clicked', () => {
+      jest.useFakeTimers()
+      render(<Game/>)
+      const timer = screen.getByRole('timer')
+      act(() => {
+        jest.advanceTimersByTime(5000)
+      })
+      expect(timer).toHaveTextContent('000')
+      const firstCell = screen.getAllByRole('cell')[0]
+      userEvent.click(firstCell)
+      act(() => {
+        jest.advanceTimersByTime(5000)
+      })
+      expect(timer).toHaveTextContent('005')
+    })
+    
+    test('it stops when game lost', () => {
+      jest.useFakeTimers()
+      const { container} = render(<Game/>)
+      const timer = screen.getByRole('timer')
+      const firstCell = screen.getAllByRole('cell')[0]
+      userEvent.click(firstCell)
+      act(() => {
+        jest.advanceTimersByTime(5000)
+      })
+      userEvent.click(container.querySelector('.cell-0-4')!)
+      act(() => {
+        jest.advanceTimersByTime(5000)
+      })
+      expect(timer).toHaveTextContent('005')
     })
   })
 })

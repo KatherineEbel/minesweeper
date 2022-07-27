@@ -14,6 +14,8 @@ export const useGame = () => {
   const [size, mines] = GameSettings[level]
   const [playerField, setPlayerField] = useState<Field>(MineSweeper.buildEmpty(size, CellState.hidden))
   const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
+  const [playing, setPlaying] = useState(false)
+  const [shouldClear, setShouldClear] = useState(false)
 
   const checkWon = (field: Field) => {
     const [solved] = MineSweeper.detectSolved(field, gameField)
@@ -22,6 +24,7 @@ export const useGame = () => {
 
 
   const onClick = (coords: Coordinates) => {
+    !playing && setPlaying(true)
     if (won !== null) return
     try {
       const updatedPlayerField = MineSweeper.openCell(coords, playerField, gameField)
@@ -30,6 +33,7 @@ export const useGame = () => {
     } catch (e) {
       setPlayerField([...gameField])
       setWon(false)
+      setPlaying(false)
     }
   }
 
@@ -43,6 +47,7 @@ export const useGame = () => {
   }
 
   const onContextMenu = (coords: Coordinates) => {
+    !playing && setPlaying(true)
     const updatedPlayerField = MineSweeper.setFlag(coords, playerField)
     checkWon(updatedPlayerField)
     setPlayerField([...updatedPlayerField])
@@ -56,8 +61,11 @@ export const useGame = () => {
 
   const reset = () => {
     resetFields()
+    setPlaying(false)
+    setShouldClear(true)
     setWon(null)
   }
+
 
   return {
     level,
@@ -67,5 +75,7 @@ export const useGame = () => {
     onChangeLevel,
     onContextMenu,
     reset,
+    playing,
+    shouldClear,
   }
 }

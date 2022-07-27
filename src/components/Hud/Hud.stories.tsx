@@ -10,7 +10,6 @@ export default {
 const Template: Story<HudProps> = (args) => <Hud {...args} />
 export const HudExample = Template.bind({})
 HudExample.args = {
-  time: '000',
   levels: ['beginner', 'intermediate', 'expert'],
   mines: '010',
 }

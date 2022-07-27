@@ -16,6 +16,9 @@ module.exports = {
       dropShadow: {
         counter: '0 4px 3px #e11d48',
       },
+      fontFamily: {
+        'display': ['"Press Start 2P"']
+      }
     },
   },
   plugins: [],

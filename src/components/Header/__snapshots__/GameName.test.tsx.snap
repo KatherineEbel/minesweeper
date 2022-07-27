@@ -3,7 +3,7 @@
 exports[`GameName renders correctly 1`] = `
 <DocumentFragment>
   <h1
-    class="css-18kvaxm"
+    class="css-9a8zuw"
   >
     minesweeper
   </h1>
