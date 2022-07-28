@@ -18,8 +18,7 @@ export interface State {
   flagCounter: number
 }
 
-export const getInitialState = (): State => {
-  const level = 'beginner'
+export const getInitialState = (level: Level = 'beginner'): State => {
   const settings = GameSettings[level]
   const [size, mines] = settings
 
@@ -36,15 +35,6 @@ export const getInitialState = (): State => {
     gameField: MineSweeper.buildField(size, mines / (size * size))
   }
 }
-
-// Actions
-const OPEN_CELL = 'modules/MinesweeperRedux/OPEN_CELL'
-
-export const openCell = (coords: Coordinates): AnyAction => ({
-  type: OPEN_CELL,
-  payload: { coords }
-})
-
 
 export const {reducer, actions } = createSlice({
   name: 'minesweeper',
@@ -78,5 +68,7 @@ export const {reducer, actions } = createSlice({
         state.error = (e as Error).message
       }
     },
+    reset: ({level}) => getInitialState(level),
+    changeLevel: (_state, {payload}: PayloadAction<Level>) => getInitialState(payload),
   },
 })

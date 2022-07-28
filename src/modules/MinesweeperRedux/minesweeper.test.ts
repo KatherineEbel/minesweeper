@@ -135,4 +135,59 @@ describe('Minesweeper reducer', function () {
 
     })
   })
+
+  describe('reset', function () {
+    test('resetting game sets game to default state', () => {
+      const nextState = reducer(initialState, actions.reset())
+      expect(nextState).toEqual(
+        expect.objectContaining({
+          error: null,
+          level,
+          seconds: 0,
+          mines: 10,
+          won: null,
+          settings: [9, 10],
+          flagCounter: 0,
+        })
+      )
+      expect(nextState.gameField).toHaveLength(9)
+      expect(nextState.playerField).toHaveLength(9)
+    })
+
+    test('changing level to intermediate updates level and settings', () => {
+      const level = 'intermediate'
+      const nextState = reducer(initialState, actions.changeLevel(level))
+      expect(nextState).toEqual(
+        expect.objectContaining({
+          error: null,
+          level,
+          seconds: 0,
+          mines: 44,
+          won: null,
+          settings: [16, 44],
+          flagCounter: 0,
+        })
+      )
+      expect(nextState.gameField).toHaveLength(16)
+      expect(nextState.playerField).toHaveLength(16)
+    })
+
+    test('changing level to expert updates level and settings', () => {
+      const level = 'expert'
+      const nextState = reducer(initialState, actions.changeLevel(level))
+      expect(nextState).toEqual(
+        expect.objectContaining({
+          error: null,
+          level,
+          seconds: 0,
+          mines: 99,
+          won: null,
+          settings: [22, 99],
+          flagCounter: 0,
+        })
+      )
+      expect(nextState.gameField).toHaveLength(22)
+      expect(nextState.playerField).toHaveLength(22)
+    })
+  })
 })
