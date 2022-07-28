@@ -1,14 +1,14 @@
-import {GameLevels, Level} from '../../lib/game'
-import Header from '../../components/Header/Header'
-import Hud from '../../components/Hud/Hud'
-import Grid from '../../components/Grid/Grid'
+import {GameLevels, Level} from '../lib/game'
+import Header from '../components/Header/Header'
+import Hud from '../components/Hud/Hud'
+import Grid from '../components/Grid/Grid'
 import React, {useCallback} from 'react'
-import {GameWrapper} from '../../styles'
-import GameOver from './GameOver'
-import {useMinesweeper} from '../../hooks/useMinesweeper'
+import {GameWrapper} from '../styles'
+import GameOver from '../components/Game/GameOver'
+import {useMinesweeper} from '../hooks/useMinesweeper'
 
 
-const Game = () => {
+const Minesweeper = () => {
   const {level, won, playing, playerField, onChangeLevel, onFlagCell, reset, shouldClear, onSelectCell, flagCount, mines} = useMinesweeper()
 
   const handleChangeLevel = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -23,12 +23,14 @@ const Game = () => {
       secondAction='click'
     />
     <Hud running={playing} shouldClear={shouldClear} levels={GameLevels} mines={String(mines - flagCount)}
-         onReset={reset}
+         onReset={reset} currentLevel={level}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />
-    <GameOver onClick={reset} won={won}/>
-    <Grid field={playerField} onClick={onSelectCell} onContextMenu={onFlagCell}/>
+    <div className='relative'>
+      <GameOver onClick={reset} won={won}/>
+      <Grid field={playerField} onClick={onSelectCell} onContextMenu={onFlagCell}/>
+    </div>
   </GameWrapper>
 }
 
-export default Game
+export default Minesweeper

@@ -19,6 +19,7 @@ const Timer = ({ running, shouldClear}: TimerProps) => {
   }, [running])
 
   useEffect(() => {
+    console.log('should clear')
     shouldClear && setSeconds(0)
   }, [shouldClear])
 

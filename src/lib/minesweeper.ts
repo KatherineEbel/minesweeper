@@ -1,5 +1,5 @@
 import {Cell, CellState} from './cell'
-import {Coordinates, exists, Field, getNeighbors, isMine, isEmpty, isFlag, isHidden} from './helpers/field'
+import {Coordinates, exists, Field, getNeighbors, isEmpty, isFlag, isHidden, isMine} from './helpers/field'
 
 export const MineSweeper = {
   buildEmpty: (size: number, state: Cell = CellState.empty): Field => {
@@ -52,7 +52,7 @@ export const MineSweeper = {
   openCell: ([row, col]: Coordinates, playerField: Field, gameField: Field): Field => {
     const gameCell = gameField[row][col]
     playerField[row][col] = gameCell
-    if (isMine(gameCell)) throw new Error('Game Over')
+    if (isMine(gameCell)) throw new Error('Minesweeper Over')
     if (isEmpty(gameCell)) {
       const neighbors = getNeighbors([row, col])
       Object.values(neighbors).forEach(neighbor => {
@@ -110,8 +110,7 @@ export const MineSweeper = {
    * @returns boolean
    */
   detectSolved: (playerField: Field, gameField: Field): boolean => {
-    const {flag, weakFlag} = CellState
-    let [mineCount, flagCount, detectedMines, hiddenCount] = [0,0,0,0];
+    let [mineCount, detectedMines, hiddenCount] = [0, 0, 0]
     for (const row of gameField.keys()) {
       for (const col of gameField[row].keys()) {
         const gameCell = gameField[row][col]
@@ -124,11 +123,8 @@ export const MineSweeper = {
         if (isHidden(playerCell)) {
           hiddenCount++
         }
-        if ([flag, weakFlag].includes(playerCell)) {
-          flagCount++
-        }
       }
     }
-    return mineCount === detectedMines &&  hiddenCount === 0
+    return mineCount === detectedMines && hiddenCount === 0
   },
 }

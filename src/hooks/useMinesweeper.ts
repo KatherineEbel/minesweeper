@@ -37,12 +37,11 @@ export const useMinesweeper = () => {
       setPlaying(false)
     }
   }, [level])
-  // }, [playerField])
 
   const onChangeLevel = useCallback((newLevel: Level) => {
     setWon(null)
     const [size, mines] = setLevel(newLevel)
-    resetFields(newLevel, size, mines)
+    updateLevel(newLevel, size, mines)
   }, [])
 
   const handleAction = (newPlayerField: Field) => {
@@ -61,18 +60,25 @@ export const useMinesweeper = () => {
     }
   }, [])
 
-  const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
-    setWon(null)
-    setFlagCount(0)
+  const updateLevel = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
     setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
     setGameField([...buildGameField(newLevel, newSize, mineCount)])
+    resetGame()
+  }
+
+  const resetGame = () => {
+    setWon(null)
+    setFlagCount(0)
+    setPlaying(false)
+    setShouldClear(true)
+    // toggle shouldClear back to false so it will update TODO: better solution?
+    setTimeout(() => setShouldClear(false))
   }
 
   const reset = useCallback(() => {
-    resetFields()
-    setPlaying(false)
-    setShouldClear(true)
-  }, [])
+    updateLevel()
+    resetGame()
+  }, [level])
 
 
   return {

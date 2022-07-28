@@ -1,2 +1,2 @@
-import Game from './Game'
-export default Game
+import Minesweeper from '../../pages/Minesweeper'
+export default Minesweeper

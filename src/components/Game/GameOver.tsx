@@ -7,7 +7,7 @@ interface ContainerProps {
 const Container = styled.div<ContainerProps>`
   display: grid;
   place-items: center;
-  top: 65%;
+  top: 50%;
   left: 50%;
   z-index: 11;
   width: 7rem;

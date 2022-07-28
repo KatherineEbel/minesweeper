@@ -186,7 +186,7 @@ describe('MineField', () => {
           [1, 1],
           [1, mine],
         ]
-        expect(() => MineSweeper.openCell([1,1], playerField, gameField)).toThrow('Game Over')
+        expect(() => MineSweeper.openCell([1,1], playerField, gameField)).toThrow('Minesweeper Over')
       })
     })
 
