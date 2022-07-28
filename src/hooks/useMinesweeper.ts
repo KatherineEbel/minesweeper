@@ -1,8 +1,9 @@
-import {useState} from 'react'
+import {useCallback, useState} from 'react'
 import {GameSettings, Level} from '../lib/game'
 import {Coordinates, Field} from '../lib/helpers/field'
 import {MineSweeper} from '../lib/minesweeper'
 import {CellState} from '../lib/cell'
+import {useSettings} from './useSettings'
 
 const buildGameField = (level: Level, size: number, mines: number) => {
   return MineSweeper.buildField(GameSettings[level][0], mines / (size * size))
@@ -10,8 +11,8 @@ const buildGameField = (level: Level, size: number, mines: number) => {
 
 export const useMinesweeper = () => {
   const [won, setWon] = useState<boolean | null>(null)
-  const [level, setLevel] = useState<Level>('beginner')
-  const [size, mines] = GameSettings[level]
+  const {level, setLevel, settings} = useSettings()
+  const [size, mines] = settings
   const [playerField, setPlayerField] = useState<Field>(MineSweeper.buildEmpty(size, CellState.hidden))
   const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
   const [playing, setPlaying] = useState(false)
@@ -19,45 +20,46 @@ export const useMinesweeper = () => {
   const [flagCount, setFlagCount] = useState(0)
 
   const checkWon = (field: Field) => {
-    const [solved] = MineSweeper.detectSolved(field, gameField)
+    const solved = MineSweeper.detectSolved(field, gameField)
     if (solved) setWon(true)
   }
 
-
-  const onClick = (coords: Coordinates) => {
+  // might need to add playing and won to dependencies? no bugs noticed yet
+  const onSelectCell = useCallback((coords: Coordinates) => {
     !playing && setPlaying(true)
     if (won !== null) return
     try {
       const updatedPlayerField = MineSweeper.openCell(coords, playerField, gameField)
-      checkWon(updatedPlayerField)
-      setPlayerField([...updatedPlayerField])
+      handleAction(updatedPlayerField)
     } catch (e) {
       setPlayerField([...gameField])
       setWon(false)
       setPlaying(false)
     }
-  }
+  }, [level])
+  // }, [playerField])
 
-  const onChangeLevel = (newLevel: Level) => {
+  const onChangeLevel = useCallback((newLevel: Level) => {
     setWon(null)
-    setLevel(() => {
-      const [size, mines] = GameSettings[newLevel]
-      resetFields(newLevel, size, mines)
-      return newLevel
-    })
+    const [size, mines] = setLevel(newLevel)
+    resetFields(newLevel, size, mines)
+  }, [])
+
+  const handleAction = (newPlayerField: Field) => {
+    checkWon(newPlayerField)
+    setPlayerField([...newPlayerField])
   }
 
-  const onContextMenu = (coords: Coordinates) => {
+  const onFlagCell = useCallback((coords: Coordinates) => {
     !playing && setPlaying(true)
     try {
       const [updatedPlayerField, fieldDiff] = MineSweeper.setFlag(coords, playerField, flagCount, mines)
       setFlagCount(prev => prev + fieldDiff)
-      checkWon(updatedPlayerField)
-      setPlayerField([...updatedPlayerField])
+      handleAction(updatedPlayerField)
     } catch (e) {
       window.alert(e)
     }
-  }
+  }, [])
 
   const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
     setWon(null)
@@ -66,11 +68,11 @@ export const useMinesweeper = () => {
     setGameField([...buildGameField(newLevel, newSize, mineCount)])
   }
 
-  const reset = () => {
+  const reset = useCallback(() => {
     resetFields()
     setPlaying(false)
     setShouldClear(true)
-  }
+  }, [])
 
 
   return {
@@ -79,9 +81,9 @@ export const useMinesweeper = () => {
     level,
     won,
     playerField,
-    onClick,
+    onSelectCell,
     onChangeLevel,
-    onContextMenu,
+    onFlagCell,
     reset,
     playing,
     shouldClear,

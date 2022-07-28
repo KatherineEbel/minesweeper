@@ -142,8 +142,7 @@ describe('minesweeper', function () {
           [1, 1, e],
         ]
 
-        const [solved, flagCount] = detectSolved(playerField, gameField)
-        expect(flagCount).toBe(1)
+        const solved = detectSolved(playerField, gameField)
         expect(solved).toBe(true)
       })
 
@@ -164,8 +163,7 @@ describe('minesweeper', function () {
           [2, 1, 0, 1, 0]
         ]
 
-        const [solved, flagCount] = detectSolved(playerField, gameField)
-        expect(flagCount).toBe(4)
+        const solved = detectSolved(playerField, gameField)
         expect(solved).toBe(true)
       })
     })
@@ -184,8 +182,7 @@ describe('minesweeper', function () {
           [1, 1, h],
         ]
 
-        const [solved, flagCount] = detectSolved(playerField, gameField)
-        expect(flagCount).toBe(0)
+        const solved = detectSolved(playerField, gameField)
         expect(solved).toBe(false)
       })
 
@@ -206,8 +203,7 @@ describe('minesweeper', function () {
           [2, h, h, h, h]
         ]
 
-        const [solved, flagCount] = detectSolved(playerField, gameField)
-        expect(flagCount).toBe(3)
+        const solved = detectSolved(playerField, gameField)
         expect(solved).toBe(false)
       })
     })

@@ -1,11 +1,11 @@
 import tw, {styled} from 'twin.macro'
-import {Cell as CellType, CellState } from '../../lib/cell'
-import React from 'react'
-import {isActive, Coordinates} from '../../lib/helpers/field'
+import {Cell as CellType, CellState} from '../../lib/cell'
+import React, {memo} from 'react'
+import {Coordinates, isActive} from '../../lib/helpers/field'
 import {useMouseDown} from '../../hooks/useMouseDown'
 
 const transparent = 'rgba(0,0,0.0)'
-const colors: { [key in CellType ]: string} = {
+const colors: { [key in CellType]: string } = {
   0: '#0f172a',
   1: '#bae6fd',
   2: '#99f6e4',
@@ -22,7 +22,7 @@ const colors: { [key in CellType ]: string} = {
 }
 
 export interface CellProps {
-  type: CellType
+  cellType: CellType
   coords: Coordinates
   mouseDown?: boolean,
   onClick?: (coords: Coordinates) => void
@@ -48,9 +48,9 @@ const HiddenCell = styled(CellContainer)<HiddenCellProps>`
 `
 
 
-const OpenCell = styled(CellContainer)<Pick<CellProps, 'type'>>`
+const OpenCell = styled(CellContainer)<Pick<CellProps, 'cellType'>>`
   ${tw`cursor-default border-slate-500`}
-  color: ${({ type }) => colors[type as CellType] ?? transparent};
+  color: ${({cellType}) => colors[cellType as CellType] ?? transparent};
 `
 
 const EmptyCell = styled(OpenCell)`${tw`text-transparent`}`
@@ -76,9 +76,17 @@ const Mine = tw.div`
 
 const MineFrame = tw(OpenCell)`bg-rose-600`
 
-const Cell = ({type, coords, ...rest}: CellProps) => {
+export const areEqual = (
+  prevProps: CellProps,
+  nextProps: CellProps
+): boolean => !prevProps.coords.some((coord, idx) => nextProps.coords[idx] !== coord)
+  && prevProps.cellType === nextProps.cellType
+  && prevProps.onClick === nextProps.onClick
+  && prevProps.onContextMenu === nextProps.onContextMenu
+
+const Cell = memo(({cellType, coords, ...rest}: CellProps) => {
   const [mouseDown, onMouseUp, onMouseDown] = useMouseDown()
-  const isActiveCell = isActive(type)
+  const isActiveCell = isActive(cellType)
 
   const onClick = () => rest.onClick && rest.onClick(coords)
 
@@ -90,7 +98,7 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
   const commonProps = {
     className: `cell-${coords.join('-')}`,
     onContextMenu,
-    type,
+    cellType: cellType,
     role: 'cell'
   }
 
@@ -103,30 +111,30 @@ const Cell = ({type, coords, ...rest}: CellProps) => {
   }
 
 
-  switch (type) {
+  switch (cellType) {
     case CellState.empty:
-      return <EmptyCell {...commonProps}>{type}</EmptyCell>
+      return <EmptyCell {...commonProps}>{cellType}</EmptyCell>
     case CellState.mine:
       return <MineFrame {...commonProps}>
         <Mine/>
       </MineFrame>
     case CellState.hidden:
-      return <HiddenCell {...activeProps}>{type}</HiddenCell>
+      return <HiddenCell {...activeProps}>{cellType}</HiddenCell>
     case CellState.flag:
       return <HiddenCell {...activeProps}>
         <Flag>
-          {type}
+          {cellType}
         </Flag>
       </HiddenCell>
     case CellState.weakFlag:
       return <HiddenCell {...activeProps}>
         <WeakFlag>
-          {type}
+          {cellType}
         </WeakFlag>
       </HiddenCell>
     default:
-      return <OpenCell {...commonProps}>{type}</OpenCell>
+      return <OpenCell {...commonProps}>{cellType}</OpenCell>
   }
-}
+}, areEqual)
 
 export default Cell

@@ -18,7 +18,7 @@ const Grid = ({field, ...rest}: GridProps) => {
   return <GridContainer className='mine-field' size={field.length}>
     {field.map((row: any[], i: any) => {
       return row.map((col, j) => {
-        return <Cell key={`${i}-${j}`} type={col} coords={[i, j]} {...rest}/>
+        return <Cell key={`${i}-${j}`} cellType={col} coords={[i, j]} {...rest}/>
       })
     })}
   </GridContainer>

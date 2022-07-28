@@ -11,7 +11,6 @@ const Timer = ({ running, shouldClear}: TimerProps) => {
   const [interval, setMyTimeout] = useState<NodeJS.Timeout | undefined>(undefined)
 
   useEffect(() => {
-    console.log('useEffect running', running)
     if (!running) {
       return clearInterval(interval)
     }
@@ -20,7 +19,6 @@ const Timer = ({ running, shouldClear}: TimerProps) => {
   }, [running])
 
   useEffect(() => {
-    console.log('useEffect shouldClear', shouldClear)
     shouldClear && setSeconds(0)
   }, [shouldClear])
 

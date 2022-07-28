@@ -39,6 +39,16 @@ export const MineSweeper = {
     })
     return field
   },
+  /**
+   * Given coordinates, playerField and gameField open cell at coordinates
+   * Throws error if opened cell is a mine
+   * Returns updated playerField
+   * @param row
+   * @param col
+   * @param playerField
+   * @param gameField
+   * @returns Field
+   */
   openCell: ([row, col]: Coordinates, playerField: Field, gameField: Field): Field => {
     const gameCell = gameField[row][col]
     playerField[row][col] = gameCell
@@ -62,7 +72,7 @@ export const MineSweeper = {
     return playerField
   },
   /**
-   * Sets flag in field or throws error if max fields reached
+   * Sets flag in field or throws error if max flags reached
    * @param coords
    * @param playerField
    * @param flagCount
@@ -94,12 +104,12 @@ export const MineSweeper = {
     return [playerField, flagDiff]
   },
   /**
-   *
+   * Detects if game is solved dependent on playerField and gameField
    * @param playerField
    * @param gameField
-   * @returns [boolean, number]
+   * @returns boolean
    */
-  detectSolved: (playerField: Field, gameField: Field): [boolean, number] => {
+  detectSolved: (playerField: Field, gameField: Field): boolean => {
     const {flag, weakFlag} = CellState
     let [mineCount, flagCount, detectedMines, hiddenCount] = [0,0,0,0];
     for (const row of gameField.keys()) {
@@ -119,7 +129,6 @@ export const MineSweeper = {
         }
       }
     }
-    const solved = mineCount === detectedMines &&  hiddenCount === 0
-    return [solved, flagCount]
+    return mineCount === detectedMines &&  hiddenCount === 0
   },
 }
