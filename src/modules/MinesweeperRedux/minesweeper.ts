@@ -1,8 +1,9 @@
-import {AnyAction, Reducer} from '@reduxjs/toolkit'
+import {AnyAction, PayloadAction, Reducer} from '@reduxjs/toolkit'
 import {CellState} from 'lib/cell'
 import {Coordinates, Field} from 'lib/helpers/field'
 import {GameSettings, Level, Settings} from 'lib/game'
 import {MineSweeper} from 'lib/minesweeper'
+import { createSlice } from '@reduxjs/toolkit'
 
 export interface State {
   error: string | null
@@ -44,34 +45,25 @@ export const openCell = (coords: Coordinates): AnyAction => ({
   payload: { coords }
 })
 
-// Reducer
-const reducer: Reducer<State> = (
-  state = getInitialState(),
-  action: AnyAction,
-) => {
-  const { playerField: pF, gameField } = state
-  switch (action.type) {
-    case OPEN_CELL:
-      const { coords } = action.payload
-      try {
-        const playerField = MineSweeper.openCell(coords, pF, gameField)
-        const solved = MineSweeper.detectSolved(pF, gameField)
-        return {
-          ...state,
-          playing: !solved,
-          playerField,
-        }
-      } catch (e: unknown) {
-        return {
-          ...state,
-          error: (e as Error).message,
-          playing: false,
-          won: false,
-          playerField: gameField,
-        }
-      }
-    default: return state
-  }
-}
 
-export default reducer
+export const {reducer, actions } = createSlice({
+  name: 'minesweeper',
+  initialState: getInitialState(),
+  reducers: {
+    openCell(state, {payload}: PayloadAction<Coordinates>) {
+      const {playerField: pF, gameField} = state
+      try {
+        const playerField = MineSweeper.openCell(payload, pF, gameField)
+        const solved = MineSweeper.detectSolved(pF, gameField)
+        state.playing = !solved
+        state.won = solved || state.won;
+        state.playerField = playerField
+      } catch (e: unknown) {
+        state.error = (e as Error).message
+        state.playing = false
+        state.won = false
+        state.playerField = gameField
+      }
+    }
+  },
+})
