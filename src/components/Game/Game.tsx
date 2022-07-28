@@ -5,23 +5,24 @@ import Grid from '../../components/Grid/Grid'
 import React from 'react'
 import {GameWrapper} from '../../styles'
 import GameOver from './GameOver'
-import {useGame} from '../../hooks/useGame'
+import {useMinesweeper} from '../../hooks/useMinesweeper'
 
 
 const Game = () => {
-  const { level, won, playing, playerField, onChangeLevel, onContextMenu, reset, shouldClear, onClick} = useGame()
+  const {level, won, playing, playerField, onChangeLevel, onContextMenu, reset, shouldClear, onClick, flagCount, mines} = useMinesweeper()
 
   const handleChangeLevel = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onChangeLevel(e.target.value as Level)
   }
   return <GameWrapper>
     <Header
-      text="minesweeper"
-      feature="flag"
-      firstAction="right"
-      secondAction="click"
+      text='minesweeper'
+      feature='flag'
+      firstAction='right'
+      secondAction='click'
     />
-    <Hud running={playing} shouldClear={shouldClear} levels={GameLevels} mines={'010'} onReset={reset}
+    <Hud running={playing} shouldClear={shouldClear} levels={GameLevels} mines={String(mines - flagCount)}
+         onReset={reset}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />
     <GameOver onClick={reset} won={won}/>

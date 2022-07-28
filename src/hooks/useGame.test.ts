@@ -1,5 +1,5 @@
 import {act, renderHook} from '@testing-library/react'
-import {useGame} from './useGame'
+import {useMinesweeper} from './useMinesweeper'
 import {GameLevels} from '../lib/game'
 
 jest.mock('../lib/minesweeper')
@@ -14,7 +14,7 @@ const [beginner, intermediate, expert] = GameLevels
 
 describe('useGame', () => {
   test('initial state', () => {
-    const {result} = renderHook(useGame)
+    const {result} = renderHook(useMinesweeper)
     const {level, won, playerField} = result.current
     expect({level, won, playerField}).toStrictEqual({
       level: beginner,
@@ -24,7 +24,7 @@ describe('useGame', () => {
   })
 
   test('change game level', () => {
-    const {result} = renderHook(useGame)
+    const {result} = renderHook(useMinesweeper)
     const {playerField: beginnerField, onChangeLevel} = result.current
     expect(beginnerField).toHaveLength(9)
     act(() => onChangeLevel(intermediate))

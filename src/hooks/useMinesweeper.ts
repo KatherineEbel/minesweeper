@@ -8,7 +8,7 @@ const buildGameField = (level: Level, size: number, mines: number) => {
   return MineSweeper.buildField(GameSettings[level][0], mines / (size * size))
 }
 
-export const useGame = () => {
+export const useMinesweeper = () => {
   const [won, setWon] = useState<boolean | null>(null)
   const [level, setLevel] = useState<Level>('beginner')
   const [size, mines] = GameSettings[level]
@@ -55,12 +55,13 @@ export const useGame = () => {
       checkWon(updatedPlayerField)
       setPlayerField([...updatedPlayerField])
     } catch (e) {
-
+      window.alert(e)
     }
   }
 
   const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
     setWon(null)
+    setFlagCount(0)
     setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
     setGameField([...buildGameField(newLevel, newSize, mineCount)])
   }
@@ -69,11 +70,12 @@ export const useGame = () => {
     resetFields()
     setPlaying(false)
     setShouldClear(true)
-    setWon(null)
   }
 
 
   return {
+    mines,
+    flagCount,
     level,
     won,
     playerField,

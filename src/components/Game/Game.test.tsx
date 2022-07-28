@@ -79,6 +79,25 @@ describe('Game', () => {
       userEvent.click(screen.getByRole('button'))
       expect(screen.queryAllByRole('cell', {name: String(CellState.hidden)})).toHaveLength(81)
     })
+
+    test('counters get reset', () => {
+      jest.useFakeTimers()
+      const {container} = render(<Game/>)
+      expect(screen.queryAllByRole('cell', {name: String(CellState.hidden)})).toHaveLength(81)
+      const mineCounter = screen.getByRole('counter')
+      const timer = screen.getByRole('timer')
+      userEvent.click(container.querySelector('.cell-0-0')!, { button: 2})
+      userEvent.click(container.querySelector('.cell-0-1')!, { button: 2})
+      act(() => {
+        jest.advanceTimersByTime(5000)
+      })
+      expect(timer).toHaveTextContent('005')
+      expect(mineCounter).toHaveTextContent('008')
+      // click reset button
+      userEvent.click(screen.getByRole('button'))
+      expect(mineCounter).toHaveTextContent('010')
+      expect(timer).toHaveTextContent(('000'))
+    })
   })
 
   describe('GameOver', function () {
