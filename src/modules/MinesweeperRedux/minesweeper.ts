@@ -57,13 +57,26 @@ export const {reducer, actions } = createSlice({
         const solved = MineSweeper.detectSolved(pF, gameField)
         state.playing = !solved
         state.won = solved || state.won;
-        state.playerField = playerField
+        state.playerField = solved ? gameField : playerField
       } catch (e: unknown) {
         state.error = (e as Error).message
         state.playing = false
         state.won = false
         state.playerField = gameField
       }
-    }
+    },
+    setFlag(state, {payload}: PayloadAction<Coordinates>) {
+      const {gameField, playerField, flagCounter, mines} = state
+      try {
+        const [updatedField, flagDif] = MineSweeper.setFlag(payload, playerField, flagCounter, mines)
+        state.flagCounter += flagDif
+        const solved = MineSweeper.detectSolved(updatedField, gameField)
+        state.won = solved || state.won
+        state.playing = !solved
+        state.playerField = solved ? gameField : updatedField
+      } catch (e: unknown) {
+        state.error = (e as Error).message
+      }
+    },
   },
 })
