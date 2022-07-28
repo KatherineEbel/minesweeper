@@ -1,7 +1,7 @@
 import React from 'react'
 import {styled} from 'twin.macro'
 import Cell from './Cell'
-import {Coordinates, Field} from '../../lib/helpers/field'
+import {Coordinates, Field} from 'lib/helpers/field'
 
 export interface GridProps {
   field: Field

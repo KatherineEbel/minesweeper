@@ -1,6 +1,6 @@
 import {act, renderHook} from '@testing-library/react'
 import {useMinesweeper} from './useMinesweeper'
-import {GameLevels} from '../lib/game'
+import {GameLevels} from 'lib/game'
 
 jest.mock('../lib/minesweeper')
 

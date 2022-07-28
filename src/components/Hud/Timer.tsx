@@ -1,4 +1,4 @@
-import {CounterLabel} from '../../styles'
+import {CounterLabel} from 'styles'
 import {useEffect, useState} from 'react'
 
 export interface TimerProps {
@@ -19,7 +19,6 @@ const Timer = ({ running, shouldClear}: TimerProps) => {
   }, [running])
 
   useEffect(() => {
-    console.log('should clear')
     shouldClear && setSeconds(0)
   }, [shouldClear])
 

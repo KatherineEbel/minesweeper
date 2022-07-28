@@ -1,8 +1,8 @@
 import {useCallback, useState} from 'react'
-import {GameSettings, Level} from '../lib/game'
-import {Coordinates, Field} from '../lib/helpers/field'
-import {MineSweeper} from '../lib/minesweeper'
-import {CellState} from '../lib/cell'
+import {GameSettings, Level} from 'lib/game'
+import {Coordinates, Field} from 'lib/helpers/field'
+import {MineSweeper} from 'lib/minesweeper'
+import {CellState} from 'lib/cell'
 import {useSettings} from './useSettings'
 
 const buildGameField = (level: Level, size: number, mines: number) => {

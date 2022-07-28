@@ -51,8 +51,9 @@ export const MineSweeper = {
    */
   openCell: ([row, col]: Coordinates, playerField: Field, gameField: Field): Field => {
     const gameCell = gameField[row][col]
+    if (isFlag(playerField[row][col])) return playerField
     playerField[row][col] = gameCell
-    if (isMine(gameCell)) throw new Error('Minesweeper Over')
+    if (isMine(gameCell)) throw new Error('Game Over')
     if (isEmpty(gameCell)) {
       const neighbors = getNeighbors([row, col])
       Object.values(neighbors).forEach(neighbor => {

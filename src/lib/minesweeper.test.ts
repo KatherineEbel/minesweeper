@@ -2,7 +2,7 @@ import {Field} from './helpers/field'
 import {CellState} from './cell'
 import {MineSweeper} from './minesweeper'
 
-const {detectSolved, setFlag} = MineSweeper
+const {detectSolved, openCell, setFlag} = MineSweeper
 const {empty: e, mine: m, flag: f, hidden: h, weakFlag: w} = CellState
 
 describe('minesweeper', function () {
@@ -123,6 +123,31 @@ describe('minesweeper', function () {
         [f,h,h],
         [w,h,h],
       ])
+    })
+  })
+
+  describe('openCell', function () {
+    test('flagged cell can\'t be opened', () => {
+
+      const gameField: Field = [
+        [1, 1, e],
+        [m, 1, e],
+        [1, 1, e],
+      ]
+
+      const playerField: Field = [
+        [1, 1, e],
+        [f, 1, e],
+        [1, 1, e],
+      ]
+
+      const actual = openCell([1,0], playerField, gameField)
+      expect(actual).toStrictEqual([
+        [1, 1, e],
+        [f, 1, e],
+        [1, 1, e],
+      ])
+
     })
   })
 
