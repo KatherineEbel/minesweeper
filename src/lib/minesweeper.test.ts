@@ -1,20 +1,21 @@
-import {Field} from '../helpers/field'
+import {Field} from './helpers/field'
 import {CellState} from './cell'
 import {MineSweeper} from './minesweeper'
 
 const {detectSolved, setFlag} = MineSweeper
-const {empty: e, bomb: b, flag: f, hidden: h} = CellState
+const {empty: e, mine: m, flag: f, hidden: h, weakFlag: w} = CellState
 
 describe('minesweeper', function () {
   describe('setFlag', () => {
-    test('setting flag to unhidden cell should be ignored', () => {
+    test('flagging unhidden cell should be ignored', () => {
       const playerField: Field = [
         [1, h, h],
         [h, h, h],
         [h, h, h],
       ]
-      const actual = setFlag([0, 0], playerField)
+      const [actual, flagDiff] = setFlag([0, 0], playerField, 0, 2)
       expect(actual).toStrictEqual(playerField)
+      expect(flagDiff).toEqual(0)
     })
 
     test('3x3 field after 1st click', () => {
@@ -23,7 +24,8 @@ describe('minesweeper', function () {
         [h, h, h],
         [h, h, h],
       ]
-      const actual = setFlag([1, 0], playerField)
+      const [actual, flagDiff] = setFlag([1, 0], playerField, 0, 2)
+      expect(flagDiff).toEqual(1)
       expect(actual).toStrictEqual([
         [1, h, h],
         [11, h, h],
@@ -38,8 +40,9 @@ describe('minesweeper', function () {
         [h, h, h],
       ]
 
-      setFlag([1, 0], playerField)
-      const actual = setFlag([1, 0], playerField)
+      setFlag([1, 0], playerField, 0, 2)
+      const [actual, flagDiff] = setFlag([1, 0], playerField, 1, 2)
+      expect(flagDiff).toEqual(0)
       expect(actual).toStrictEqual([
         [1, h, h],
         [12, h, h],
@@ -54,9 +57,10 @@ describe('minesweeper', function () {
         [h, h, h],
       ]
 
-      setFlag([1, 0], playerField)
-      setFlag([1, 0], playerField)
-      const actual = setFlag([1, 0], playerField)
+      setFlag([1, 0], playerField, 0, 2)
+      setFlag([1, 0], playerField, 1, 2)
+      const [actual, flagDiff] = setFlag([1, 0], playerField, 1, 2)
+      expect(flagDiff).toEqual(-1)
       expect(actual).toStrictEqual([
         [1, h, h],
         [10, h, h],
@@ -64,6 +68,62 @@ describe('minesweeper', function () {
       ])
     })
 
+    test("number of flags can't exceed number of mines", () => {
+      const playerField: Field = [
+        [f,h,h],
+        [h,h,h],
+        [f,h,h],
+      ]
+
+      expect(() => {
+        setFlag([1,0], playerField, 2, 2)
+      }).toThrow()
+    })
+
+    test("can switch flag from hard to weak when max flags reached", () => {
+      const playerField: Field = [
+        [f,h,h],
+        [h,h,h],
+        [f,h,h],
+      ]
+
+      const [actual, flagDiff] = setFlag([0,0], playerField, 2, 2)
+      expect(flagDiff).toEqual(0)
+      expect(actual).toStrictEqual([
+        [w,h,h],
+        [h,h,h],
+        [f,h,h],
+      ])
+    })
+
+    test("can't add flag even if flags are weak when max flags reached", () => {
+      const playerField: Field = [
+        [w,h,h],
+        [h,h,h],
+        [w,h,h],
+      ]
+
+      expect(() => {
+        setFlag([1,0], playerField, 2, 2)
+      }).toThrow()
+    })
+
+    test("can add another flag after removing one", () => {
+      const playerField: Field = [
+        [w,h,h],
+        [h,h,h],
+        [w,h,h],
+      ]
+
+      setFlag([0,0], playerField, 2, 2)
+      const [actual, flagDiff] = setFlag([1, 0], playerField, 1, 2)
+      expect(flagDiff).toEqual(1)
+      expect(actual).toStrictEqual([
+        [h,h,h],
+        [f,h,h],
+        [w,h,h],
+      ])
+    })
   })
 
   describe('detectSolved', function () {
@@ -72,7 +132,7 @@ describe('minesweeper', function () {
       test('3x3', () => {
         const gameField: Field = [
           [1, 1, e],
-          [b, 1, e],
+          [m, 1, e],
           [1, 1, e],
         ]
 
@@ -114,7 +174,7 @@ describe('minesweeper', function () {
       test('3x3', () => {
         const gameField: Field = [
           [1, 1, e],
-          [b, 1, e],
+          [m, 1, e],
           [1, 1, e],
         ]
 

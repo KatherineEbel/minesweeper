@@ -1,5 +1,5 @@
 import {Cell, CellState} from './cell'
-import {Coordinates, exists, Field, getNeighbors, isMine, isEmpty, isFlag, isHidden} from '../helpers/field'
+import {Coordinates, exists, Field, getNeighbors, isMine, isEmpty, isFlag, isHidden} from './helpers/field'
 
 export const MineSweeper = {
   buildEmpty: (size: number, state: Cell = CellState.empty): Field => {
@@ -62,28 +62,36 @@ export const MineSweeper = {
     return playerField
   },
   /**
-   *
+   * Sets flag in field or throws error if max fields reached
    * @param coords
    * @param playerField
+   * @param flagCount
+   * @param mineCount
+   * @returns [Field, number]
+   *
    */
-  setFlag: (coords: Coordinates, playerField: Field): Field => {
+  setFlag: (coords: Coordinates, playerField: Field, flagCount: number, mineCount: number): [Field, number] => {
     const [row, col] = coords
     const cell = playerField[row][col]
+    let flagDiff = 0
     const {flag, weakFlag, hidden} = CellState
     switch (cell) {
       case flag:
         playerField[row][col] = weakFlag
         break
       case weakFlag:
+        flagDiff--
         playerField[row][col] = hidden
         break
       case hidden:
+        if (flagCount === mineCount) throw new Error('Remove a flag to add a new one')
         playerField[row][col] = flag
+        flagDiff++
         break
       default:
-        return playerField
+        return [playerField, flagDiff]
     }
-    return playerField
+    return [playerField, flagDiff]
   },
   /**
    *

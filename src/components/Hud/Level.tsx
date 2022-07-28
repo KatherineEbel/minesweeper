@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import tw from 'twin.macro'
-import {Level as LevelName} from '../../types/game'
+import {Level as LevelName} from '../../lib/game'
 
 export interface LevelProps {
   levels: readonly LevelName[]

@@ -1,9 +1,9 @@
 import {act, render, screen} from '@testing-library/react'
 import Game from './Game'
 import userEvent from '@testing-library/user-event'
-import {CellState} from '../../types/cell'
+import {CellState} from '../../lib/cell'
 
-jest.mock('../../types/minesweeper')
+jest.mock('../../lib/minesweeper')
 
 describe('Game', () => {
   describe('render', () => {

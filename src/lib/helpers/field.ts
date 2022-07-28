@@ -1,4 +1,4 @@
-import { Cell, CellState } from '../types/cell'
+import { Cell, CellState } from '../cell'
 
 export type Field = Cell[][]
 export type Coordinates = [number, number]
@@ -20,7 +20,7 @@ export const isActive = (cell: Cell): boolean => {
 export const isMine = (cell: Cell): boolean => cell === CellState.mine
 export const isEmpty = (cell: Cell): boolean => cell === CellState.empty
 export const isHidden = (cell: Cell): boolean => cell === CellState.hidden
-export const isFlag = (cell: Cell): boolean => cell === CellState.flag
+export const isFlag = (cell: Cell): boolean => [CellState.weakFlag, CellState.flag].includes(cell)
 
 export const exists = ([row, col]: Coordinates, field: Field): boolean => {
 

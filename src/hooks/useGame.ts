@@ -1,8 +1,8 @@
 import {useState} from 'react'
-import {GameSettings, Level} from '../types/game'
-import {Coordinates, Field} from '../helpers/field'
-import {MineSweeper} from '../types/minesweeper'
-import {CellState} from '../types/cell'
+import {GameSettings, Level} from '../lib/game'
+import {Coordinates, Field} from '../lib/helpers/field'
+import {MineSweeper} from '../lib/minesweeper'
+import {CellState} from '../lib/cell'
 
 const buildGameField = (level: Level, size: number, mines: number) => {
   return MineSweeper.buildField(GameSettings[level][0], mines / (size * size))
@@ -16,6 +16,7 @@ export const useGame = () => {
   const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
   const [playing, setPlaying] = useState(false)
   const [shouldClear, setShouldClear] = useState(false)
+  const [flagCount, setFlagCount] = useState(0)
 
   const checkWon = (field: Field) => {
     const [solved] = MineSweeper.detectSolved(field, gameField)
@@ -48,9 +49,14 @@ export const useGame = () => {
 
   const onContextMenu = (coords: Coordinates) => {
     !playing && setPlaying(true)
-    const updatedPlayerField = MineSweeper.setFlag(coords, playerField)
-    checkWon(updatedPlayerField)
-    setPlayerField([...updatedPlayerField])
+    try {
+      const [updatedPlayerField, fieldDiff] = MineSweeper.setFlag(coords, playerField, flagCount, mines)
+      setFlagCount(prev => prev + fieldDiff)
+      checkWon(updatedPlayerField)
+      setPlayerField([...updatedPlayerField])
+    } catch (e) {
+
+    }
   }
 
   const resetFields = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {

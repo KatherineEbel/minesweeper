@@ -1,8 +1,8 @@
 import {act, renderHook} from '@testing-library/react'
 import {useGame} from './useGame'
-import {GameLevels} from '../types/game'
+import {GameLevels} from '../lib/game'
 
-jest.mock('../types/minesweeper')
+jest.mock('../lib/minesweeper')
 
 const [beginner, intermediate, expert] = GameLevels
 

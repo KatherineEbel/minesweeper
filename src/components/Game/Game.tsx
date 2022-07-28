@@ -1,4 +1,4 @@
-import {GameLevels, Level} from '../../types/game'
+import {GameLevels, Level} from '../../lib/game'
 import Header from '../../components/Header/Header'
 import Hud from '../../components/Hud/Hud'
 import Grid from '../../components/Grid/Grid'

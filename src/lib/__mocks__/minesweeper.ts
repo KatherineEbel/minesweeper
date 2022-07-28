@@ -1,4 +1,4 @@
-import {Field} from '../../helpers/field'
+import {Field} from '../helpers/field'
 
 const originalModule = jest.requireActual('../minesweeper')
 

@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 import Counter from './Counter'
 import LevelComponent from './Level'
 import Reset from './Reset'
-import {Level} from '../../types/game'
+import {Level} from '../../lib/game'
 import Timer from './Timer'
 
 export interface HudProps {
