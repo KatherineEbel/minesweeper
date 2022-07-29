@@ -1,6 +1,7 @@
 import {CellState} from 'lib/cell'
 import {GameSettings} from 'lib/game'
-import {reducer, actions, State} from 'modules/MinesweeperRedux/minesweeper'
+import {Field} from 'lib/helpers/field'
+import {reducer, actions, State, runTimer, updateTime} from 'modules/MinesweeperRedux/minesweeper'
 
 const {hidden: h, flag: f, weakFlag: w} = CellState
 
@@ -11,6 +12,7 @@ describe('Minesweeper reducer', function () {
     playing: false,
     level,
     seconds: 0,
+    timerStarted: false,
     won: null,
     mines: 1,
     settings: GameSettings[level],
@@ -136,7 +138,7 @@ describe('Minesweeper reducer', function () {
     })
   })
 
-  describe('reset', function () {
+  describe('reset and change level', function () {
     test('resetting game sets game to default state', () => {
       const nextState = reducer(initialState, actions.reset())
       expect(nextState).toEqual(
@@ -188,6 +190,138 @@ describe('Minesweeper reducer', function () {
       )
       expect(nextState.gameField).toHaveLength(22)
       expect(nextState.playerField).toHaveLength(22)
+    })
+
+  })
+
+  describe('update time action', () => {
+
+    test('update seconds from 0', () => {
+      expect(reducer({...initialState, seconds: 0}, actions.updateTime()))
+        .toEqual(expect.objectContaining({seconds: 1}))
+    })
+
+    test('update seconds from 10', () => {
+      expect(reducer({...initialState, seconds: 10}, actions.updateTime()))
+        .toEqual(expect.objectContaining({seconds: 11}))
+    })
+  })
+
+  describe('runTimer thunk', () => {
+    test('when should start', () => {
+      const mockDispatch = jest.fn()
+      runTimer()(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            playing: true,
+            seconds: 0
+          } as State
+        }),
+        undefined
+      )
+      expect(mockDispatch).toHaveBeenCalled()
+    })
+
+    test("when timer already running", () => {
+      const mockDispatch = jest.fn()
+      runTimer()(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            playing: true,
+            timerStarted:true
+          } as State
+        }),
+        undefined
+      )
+      expect(mockDispatch).not.toHaveBeenCalled()
+    })
+
+    test("when player starts and timer not started", () => {
+      const mockDispatch = jest.fn()
+      runTimer()(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            playing: true,
+            timerStarted:false
+          } as State
+        }),
+        undefined
+      )
+      expect(mockDispatch).toHaveBeenCalled()
+    })
+
+    test("when timer is not started and not playing", () => {
+      const mockDispatch = jest.fn()
+      runTimer()(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            playing: false,
+            timerStarted: false
+          } as State
+        }),
+        undefined
+      )
+      expect(mockDispatch).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('updateTime thunk', () => {
+    test('when playing game and timer started', () => {
+      jest.useFakeTimers()
+      const mockDispatch = jest.fn()
+      const gameField: Field = [[]]
+      updateTime(gameField)(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            gameField,
+            playing: true,
+            timerStarted: true
+          } as State
+        }),
+        undefined
+      )
+      jest.advanceTimersByTime(1000)
+      expect(mockDispatch).toHaveBeenCalledTimes(2)
+    })
+
+    test('when not playing game', () => {
+      jest.useFakeTimers()
+      const mockDispatch = jest.fn()
+      const gameField: Field = [[]]
+      updateTime(gameField)(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            gameField,
+            playing: false,
+            timerStarted: false
+          } as State
+        }),
+        undefined
+      )
+      jest.advanceTimersByTime(1000)
+      expect(mockDispatch).not.toHaveBeenCalled()
+    })
+
+    test("update time with when game reset", () => {
+      jest.useFakeTimers()
+      const mockDispatch = jest.fn()
+      updateTime(initialState.gameField)(
+        mockDispatch,
+        () => ({
+          minesweeper: {
+            gameField: {...initialState.gameField}
+          } as State
+        }),
+        undefined
+      )
+      jest.advanceTimersByTime(1000)
+      expect(mockDispatch).toHaveBeenCalledTimes(0)
     })
   })
 })

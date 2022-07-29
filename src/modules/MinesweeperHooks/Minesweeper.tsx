@@ -9,7 +9,7 @@ import {useMinesweeper} from 'hooks/useMinesweeper'
 
 
 const Minesweeper = () => {
-  const {level, won, playing, playerField, onChangeLevel, onFlagCell, reset, shouldClear, onSelectCell, flagCount, mines} = useMinesweeper()
+  const {level, won, seconds, playerField, onChangeLevel, onFlagCell, reset, onSelectCell, flagCount, mines} = useMinesweeper()
 
   const handleChangeLevel = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     onChangeLevel(e.target.value as Level)
@@ -22,7 +22,7 @@ const Minesweeper = () => {
       firstAction='right'
       secondAction='click'
     />
-    <Hud running={playing} shouldClear={shouldClear} levels={GameLevels} mines={String(mines - flagCount)}
+    <Hud seconds={seconds} levels={GameLevels} mines={String(mines - flagCount)}
          onReset={reset} currentLevel={level}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />

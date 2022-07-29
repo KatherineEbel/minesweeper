@@ -1,8 +1,8 @@
 import {act, renderHook} from '@testing-library/react'
-import {useMinesweeper} from './useMinesweeper'
 import {GameLevels} from 'lib/game'
+import {useMinesweeper} from './useMinesweeper'
 
-jest.mock('../lib/minesweeper')
+jest.mock('lib/minesweeper')
 
 const [beginner, intermediate, expert] = GameLevels
 
@@ -33,5 +33,35 @@ describe('useGame', () => {
     act(() => onChangeLevel(expert))
     const {playerField: expertField} = result.current
     expect(expertField).toHaveLength(22)
+  })
+
+  test('timer should start when clicking cell', () => {
+    jest.useFakeTimers()
+    const {result} = renderHook(useMinesweeper)
+    const timeToPass = 5
+    act(() => {
+      jest.advanceTimersByTime(5000)
+    })
+    expect(result.current.seconds).toBe(0)
+    act(() => result.current.onSelectCell([0,0]))
+    act(() => {
+      jest.advanceTimersByTime(5000)
+    })
+    expect(result.current.seconds).toBe(timeToPass)
+  })
+
+  test('timer should start when flagging cell', () => {
+    jest.useFakeTimers()
+    const {result} = renderHook(useMinesweeper)
+    const timeToPass = 5
+    act(() => {
+      jest.advanceTimersByTime(5000)
+    })
+    expect(result.current.seconds).toBe(0)
+    act(() => result.current.onFlagCell([0,0]))
+    act(() => {
+      jest.advanceTimersByTime(5000)
+    })
+    expect(result.current.seconds).toBe(timeToPass)
   })
 })

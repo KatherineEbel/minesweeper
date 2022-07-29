@@ -2,7 +2,7 @@ import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import MinesweeperRedux from 'modules/MinesweeperRedux/MinesweeperRedux'
 
-jest.mock('../../lib/minesweeper')
+jest.mock('lib/minesweeper')
 
 describe('MinesweeperRedux', () => {
   test('it renders game field', () => {

@@ -1,15 +1,17 @@
-import {AnyAction, PayloadAction, Reducer} from '@reduxjs/toolkit'
+import {AnyAction, PayloadAction, Reducer, ThunkAction} from '@reduxjs/toolkit'
 import {CellState} from 'lib/cell'
 import {Coordinates, Field} from 'lib/helpers/field'
 import {GameSettings, Level, Settings} from 'lib/game'
 import {MineSweeper} from 'lib/minesweeper'
 import { createSlice } from '@reduxjs/toolkit'
+import {RootState} from 'store'
 
 export interface State {
   error: string | null
   level: Level
   playing: boolean
   seconds: number
+  timerStarted: boolean
   mines: number
   won: boolean | null
   settings: Settings
@@ -27,6 +29,7 @@ export const getInitialState = (level: Level = 'beginner'): State => {
     level,
     playing: false,
     seconds: 0,
+    timerStarted: false,
     mines,
     won: null,
     settings,
@@ -40,6 +43,8 @@ export const {reducer, actions } = createSlice({
   name: 'minesweeper',
   initialState: getInitialState(),
   reducers: {
+    changeLevel: (_state, {payload}: PayloadAction<Level>) => getInitialState(payload),
+    reset: ({level}) => getInitialState(level),
     openCell(state, {payload}: PayloadAction<Coordinates>) {
       const {playerField: pF, gameField} = state
       try {
@@ -68,7 +73,31 @@ export const {reducer, actions } = createSlice({
         state.error = (e as Error).message
       }
     },
-    reset: ({level}) => getInitialState(level),
-    changeLevel: (_state, {payload}: PayloadAction<Level>) => getInitialState(payload),
+    setTimerActive(state) { state.timerStarted = true },
+    updateTime(state) {
+      state.seconds += 1
+    },
   },
 })
+
+export const updateTime = (prevField: Field): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return (dispatch, getState) => {
+    setTimeout(() => {
+      const { gameField, playing, timerStarted } = getState().minesweeper
+      if (playing && timerStarted && gameField === prevField) {
+        dispatch(actions.updateTime())
+        dispatch(updateTime(gameField))
+      }
+    }, 1000)
+  }
+}
+
+export const runTimer = (): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return (dispatch, getState) => {
+    const { gameField, playing, timerStarted } = getState().minesweeper
+    if (playing && !timerStarted) {
+      dispatch(actions.setTimerActive())
+      dispatch(updateTime(gameField))
+    }
+  }
+}

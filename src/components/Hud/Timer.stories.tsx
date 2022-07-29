@@ -10,6 +10,5 @@ export default {
 const Template: Story<TimerProps> = (args) => <Timer {...args}/>
 export const TimerExample = Template.bind({})
 TimerExample.args = {
-  running: true,
-  shouldClear: false
+  seconds: 0
 }

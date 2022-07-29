@@ -10,7 +10,7 @@ import { reducer, actions, getInitialState } from 'modules/MinesweeperRedux/mine
 const { setFlag, reset, openCell, changeLevel } = actions
 
 const MinesweeperRedux = () => {
-  const [ {flagCounter, level, playerField, playing, mines, won}, dispatch ] = useReducer(reducer, getInitialState())
+  const [ {seconds, flagCounter, level, playerField, playing, mines, won}, dispatch ] = useReducer(reducer, getInitialState())
   const handleChangeLevel = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(changeLevel(e.target.value as Level))
   }, [])
@@ -26,7 +26,7 @@ const MinesweeperRedux = () => {
       firstAction='right'
       secondAction='click'
     />
-    <Hud running={playing} shouldClear={!playing} levels={GameLevels} mines={String(mines - flagCounter)}
+    <Hud seconds={seconds} levels={GameLevels} mines={String(mines - flagCounter)}
          onReset={onReset} currentLevel={level}
          defaultLevel={level} onChangeLevel={handleChangeLevel}
     />

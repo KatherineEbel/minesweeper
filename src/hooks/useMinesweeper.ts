@@ -1,3 +1,4 @@
+import {useTime} from 'hooks/useTime'
 import {useCallback, useState} from 'react'
 import {GameSettings, Level} from 'lib/game'
 import {Coordinates, Field} from 'lib/helpers/field'
@@ -16,7 +17,7 @@ export const useMinesweeper = () => {
   const [playerField, setPlayerField] = useState<Field>(MineSweeper.buildEmpty(size, CellState.hidden))
   const [gameField, setGameField] = useState<Field>(buildGameField(level, size, mines))
   const [playing, setPlaying] = useState(false)
-  const [shouldClear, setShouldClear] = useState(false)
+  const [seconds, onReset] = useTime(playing, won)
   const [flagCount, setFlagCount] = useState(0)
 
   const checkWon = (field: Field) => {
@@ -70,9 +71,7 @@ export const useMinesweeper = () => {
     setWon(null)
     setFlagCount(0)
     setPlaying(false)
-    setShouldClear(true)
-    // toggle shouldClear back to false so it will update TODO: better solution?
-    setTimeout(() => setShouldClear(false))
+    onReset()
   }
 
   const reset = useCallback(() => {
@@ -92,6 +91,6 @@ export const useMinesweeper = () => {
     onFlagCell,
     reset,
     playing,
-    shouldClear,
+    seconds,
   }
 }
