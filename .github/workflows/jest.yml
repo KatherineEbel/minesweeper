@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 # Controls when the workflow will run
 on:
@@ -36,11 +36,6 @@ jobs:
           npm run build --if-present
           npm run test:ci  
 
-      - name: Build
-        run: npm run build
-
 #      - name: Stryker-Mutator
 #        run: npm run test:mutate
 #
-      - name: Chromatic
-        run: npm run chromatic
