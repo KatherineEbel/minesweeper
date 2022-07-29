@@ -20,10 +20,22 @@ export const useMinesweeper = () => {
   const [seconds, onReset] = useTime(playing, won)
   const [flagCount, setFlagCount] = useState(0)
 
-  const checkWon = (field: Field) => {
+  const resetGame = useCallback(() => {
+    setWon(null)
+    setFlagCount(0)
+    setPlaying(false)
+    onReset()
+  }, [onReset])
+
+  const checkWon = useCallback((field: Field) => {
     const solved = MineSweeper.detectSolved(field, gameField)
     if (solved) setWon(true)
-  }
+  }, [gameField])
+
+  const handleAction = useCallback((newPlayerField: Field) => {
+    checkWon(newPlayerField)
+    setPlayerField([...newPlayerField])
+  }, [checkWon])
 
   // might need to add playing and won to dependencies? no bugs noticed yet
   const onSelectCell = useCallback((coords: Coordinates) => {
@@ -37,18 +49,21 @@ export const useMinesweeper = () => {
       setWon(false)
       setPlaying(false)
     }
-  }, [level])
+  }, [gameField, handleAction, playerField, playing, won])
+
+  const updateLevel = useCallback((newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
+    setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
+    setGameField([...buildGameField(newLevel, newSize, mineCount)])
+    resetGame()
+  }, [level, mines, resetGame, size])
+
+
 
   const onChangeLevel = useCallback((newLevel: Level) => {
     setWon(null)
     const [size, mines] = setLevel(newLevel)
     updateLevel(newLevel, size, mines)
-  }, [])
-
-  const handleAction = (newPlayerField: Field) => {
-    checkWon(newPlayerField)
-    setPlayerField([...newPlayerField])
-  }
+  }, [setLevel, updateLevel])
 
   const onFlagCell = useCallback((coords: Coordinates) => {
     !playing && setPlaying(true)
@@ -59,25 +74,12 @@ export const useMinesweeper = () => {
     } catch (e) {
       window.alert(e)
     }
-  }, [])
-
-  const updateLevel = (newLevel: Level = level, newSize: number = size, mineCount: number = mines) => {
-    setPlayerField([...MineSweeper.buildEmpty(newSize, CellState.hidden)])
-    setGameField([...buildGameField(newLevel, newSize, mineCount)])
-    resetGame()
-  }
-
-  const resetGame = () => {
-    setWon(null)
-    setFlagCount(0)
-    setPlaying(false)
-    onReset()
-  }
+  }, [flagCount, handleAction, mines, playerField, playing])
 
   const reset = useCallback(() => {
     updateLevel()
     resetGame()
-  }, [level])
+  }, [resetGame, updateLevel])
 
 
   return {

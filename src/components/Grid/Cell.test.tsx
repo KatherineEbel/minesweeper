@@ -1,6 +1,6 @@
 import Cell, {areEqual} from 'components/Grid/Cell'
 import {Cell as CellType} from 'lib/cell'
-import {createEvent, fireEvent, render } from '@testing-library/react'
+import {createEvent, fireEvent, render, screen } from '@testing-library/react'
 import {isActive, Coordinates} from 'lib/helpers/field'
 
 describe('Cell Component', function () {
@@ -13,8 +13,8 @@ describe('Cell Component', function () {
   const cells = Array.from({length: 13}, (_, k) => ({cell: k as CellType, prevented: true}))
   test.each(cells)('check prevent default for context menu', ({cell, prevented}) => {
     const props = { coords, onClick: jest.fn(), onContextMenu: jest.fn() }
-    const {container} = render(<Cell cellType={cell } {...props}/>)
-    const target = container.querySelector(`.cell-${coords.join('-')}`)!
+    render(<Cell cellType={cell } {...props}/>)
+    const target = screen.getByTestId(`${coords.join('-')}`)
     const contextMenuEvent = createEvent.contextMenu(target)
     fireEvent(target, contextMenuEvent)
     expect(contextMenuEvent.defaultPrevented).toBe(prevented)
@@ -23,11 +23,13 @@ describe('Cell Component', function () {
 
   test.each(cells.filter(({cell}) => isActive(cell)))('onClick and onContextMenu handlers called for active cells', ({cell }) => {
     const props = { coords, onClick: jest.fn(), onContextMenu: jest.fn() }
-    const {container } = render(<Cell cellType={cell } {...props}/>)
-    const target = container.querySelector(`.cell-${coords.join('-')}`)!
+    render(<Cell cellType={cell } {...props}/>)
+    const target = screen.getByTestId(`${coords.join('-')}`)
     if (isActive(cell)) {
+      // eslint-disable-next-line jest/no-conditional-expect
       expect(target).toHaveStyle(`border: 1px solid rgba(0,0,0,0.8)`)
       fireEvent.mouseDown(target)
+      // eslint-disable-next-line jest/no-conditional-expect
       expect(target).toHaveStyle(`border: 1px solid transparent`)
     }
     fireEvent.click(target)

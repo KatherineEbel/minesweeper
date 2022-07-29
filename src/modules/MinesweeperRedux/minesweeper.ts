@@ -1,4 +1,4 @@
-import {AnyAction, PayloadAction, Reducer, ThunkAction} from '@reduxjs/toolkit'
+import {AnyAction, PayloadAction, ThunkAction} from '@reduxjs/toolkit'
 import {CellState} from 'lib/cell'
 import {Coordinates, Field} from 'lib/helpers/field'
 import {GameSettings, Level, Settings} from 'lib/game'

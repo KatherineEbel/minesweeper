@@ -14,7 +14,7 @@ export const useSettings = (): UseSettings => {
   const handleLevelChange = useCallback((level: Level) => {
     setLevel(level)
     return GameSettings[level]
-  }, [level])
+  }, [])
 
   return {
     level,

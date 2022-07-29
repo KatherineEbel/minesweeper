@@ -11,6 +11,7 @@ test('GameOver renders correctly', () => {
     </Provider>
   )
   const gameOver = screen.getByText("🤕")
+  // eslint-disable-next-line testing-library/no-node-access
   expect(gameOver.parentElement).toHaveStyle({transform: 'translate(-50%, -50%) scale(0)'})
   expect(asFragment()).toMatchSnapshot()
 })

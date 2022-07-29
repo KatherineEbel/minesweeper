@@ -1,11 +1,11 @@
-import {Route, Routes, useSearchParams} from 'react-router-dom'
+import {Route, Routes }  from 'react-router-dom'
 import React, {Suspense}  from 'react'
 
 const Footer = () => {
   return (
     <div className='attribution'>
-      <a className='text-slate-100 mr-1' target="_blank" href="https://icons8.com/icon/47427/naval-mine">Naval Mine</a>
-      icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      <a className='text-slate-100 mr-1' target="_blank" href="https://icons8.com/icon/47427/naval-mine" rel="noreferrer">Naval Mine</a>
+      icon by <a target="_blank" href="https://icons8.com" rel="noreferrer">Icons8</a>
     </div>
   )
 }

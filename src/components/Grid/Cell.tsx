@@ -92,7 +92,7 @@ const Cell = memo(({cellType, coords, ...rest}: CellProps) => {
   }
 
   const commonProps = {
-    className: `cell-${coords.join('-')}`,
+    "data-testid": coords.join('-'),
     onContextMenu,
     cellType: cellType,
     role: 'cell'

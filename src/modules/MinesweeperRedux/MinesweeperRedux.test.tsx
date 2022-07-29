@@ -11,20 +11,20 @@ describe('MinesweeperRedux', () => {
   })
 
   test('clicking cell', () => {
-    const { asFragment, container } = render(<MinesweeperRedux/>)
-    userEvent.click(container.querySelector('.cell-0-0')!)
+    const { asFragment } = render(<MinesweeperRedux/>)
+    userEvent.click(screen.getByTestId('0-0'))
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('flagging cell', () => {
-    const { asFragment, container } = render(<MinesweeperRedux/>)
-    userEvent.click(container.querySelector('.cell-0-0')!, { button: 2})
+    const { asFragment} = render(<MinesweeperRedux/>)
+    userEvent.click(screen.getByTestId('0-0'), { button: 2})
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('resetting game', () => {
-    const { asFragment, container } = render(<MinesweeperRedux/>)
-    userEvent.click(container.querySelector('.cell-0-0')!)
+    const { asFragment} = render(<MinesweeperRedux/>)
+    userEvent.click(screen.getByTestId('0-0'))
     expect(asFragment()).toMatchSnapshot()
     userEvent.click(screen.getByRole('button', { name: '🙂'}))
     expect(asFragment()).toMatchSnapshot()

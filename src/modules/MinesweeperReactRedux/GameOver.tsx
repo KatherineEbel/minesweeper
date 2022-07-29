@@ -7,7 +7,7 @@ const { reset } = actions
 
 const GameOverRedux = () => {
   const dispatch = useDispatch()
-  const onClick = useCallback(() => dispatch(reset()), [])
+  const onClick = useCallback(() => dispatch(reset()), [dispatch])
 
   const {won} = useSelector(({minesweeper}: RootState) => minesweeper)
   return (
