@@ -49,23 +49,6 @@ describe('Minesweeper reducer', function () {
       })
     })
 
-    test('opening cell with mine', () => {
-      expect(reducer(initialState, actions.openCell([0, 0]))).toEqual({
-        ...initialState,
-        playing: false,
-        won: false,
-        playerField: initialState.gameField,
-      })
-    })
-
-    test('opening cell with mine', () => {
-      expect(reducer(initialState, actions.openCell([0, 0]))).toEqual({
-        ...initialState,
-        playing: false,
-        won: false,
-        playerField: initialState.playerField,
-      })
-    })
 
     test('opening cell with flag', () => {
       expect(reducer({
