@@ -1,5 +1,4 @@
 import {CounterLabel} from 'styles'
-import {useEffect, useState} from 'react'
 
 export interface TimerProps {
   seconds: number

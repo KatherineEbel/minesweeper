@@ -26,3 +26,5 @@ yarn-error.log*
 # stryker temp files
 .stryker-tmp
 reports
+storybook-static
+build-storybook.log

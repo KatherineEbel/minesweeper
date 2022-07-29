@@ -6,7 +6,7 @@ const config = {
   testRunner: "jest",
   reporters: ["progress", "clear-text", "html", "dashboard"],
   coverageAnalysis: "perTest",
-  thresholds: { high: 90, low: 88, break: null},
+  thresholds: { high: 90, low: 88, break: 50},
   jest: {
     projectType: "create-react-app",
   },
