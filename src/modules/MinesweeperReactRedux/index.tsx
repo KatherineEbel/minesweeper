@@ -1,0 +1,2 @@
+import MinesweeperReactRedux from 'modules/MinesweeperReactRedux/MinesweeperReactRedux'
+export default MinesweeperReactRedux

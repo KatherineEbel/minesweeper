@@ -89,7 +89,7 @@ exports[`MinesweeperRedux changing level 1`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
@@ -1732,7 +1732,7 @@ exports[`MinesweeperRedux clicking cell 1`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
@@ -2325,7 +2325,7 @@ exports[`MinesweeperRedux flagging cell 1`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
@@ -2933,7 +2933,7 @@ exports[`MinesweeperRedux it renders game field 1`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
@@ -3526,7 +3526,7 @@ exports[`MinesweeperRedux resetting game 1`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
@@ -4119,7 +4119,7 @@ exports[`MinesweeperRedux resetting game 2`] = `
       class="relative"
     >
       <div
-        class="css-1gu7ewn"
+        class="css-17cwb24"
       >
         <span
           class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"

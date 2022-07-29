@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hud renders correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="css-1xy6mwg"
+  >
+    <p
+      class="css-1ke0xfb"
+      role="timer"
+    >
+      000
+    </p>
+    <select
+      class="css-1a3ea01"
+    >
+      <option
+        class=" css-9cl0yr"
+        value="beginner"
+      >
+        beginner
+      </option>
+      <option
+        class=" css-9cl0yr"
+        value="intermediate"
+      >
+        intermediate
+      </option>
+      <option
+        class=" css-9cl0yr"
+        value="expert"
+      >
+        expert
+      </option>
+    </select>
+    <button
+      class="css-12o4q79"
+    >
+      🙂
+    </button>
+    <p
+      class="css-1ke0xfb"
+      role="counter"
+    >
+      010
+    </p>
+  </header>
+</DocumentFragment>
+`;

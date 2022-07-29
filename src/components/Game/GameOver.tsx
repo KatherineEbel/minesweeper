@@ -5,19 +5,14 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
-  display: grid;
-  place-items: center;
-  top: 50%;
-  left: 50%;
   z-index: 11;
   width: 7rem;
   height: 7rem;
   font-size: 5rem;
   line-height: 5rem;
-  position: absolute;
   transform: translate(-50%, -50%) scale(${({won}) => won === null ? 0 : 1});
   transition: transform 500ms ease-in-out;
-  ${tw`rounded-full bg-slate-800 shadow-xl cursor-pointer`}
+  ${tw`grid place-items-center top-1/2 left-1/2 absolute rounded-full bg-slate-800 shadow-xl cursor-pointer`}
 `
 
 interface GameOverProps extends ContainerProps {

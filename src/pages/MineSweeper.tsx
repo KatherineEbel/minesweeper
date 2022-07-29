@@ -1,7 +1,7 @@
-import MinesweeperRedux from 'modules/MinesweeperRedux'
+import MinesweeperReactRedux from 'modules/MinesweeperReactRedux'
 
 const MineSweeper = () => {
-  return <MinesweeperRedux/>
+  return <MinesweeperReactRedux/>
 }
 
 export default MineSweeper

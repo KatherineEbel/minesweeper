@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameOver renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-17cwb24"
+  >
+    <span
+      class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+    >
+      🤕
+    </span>
+  </div>
+</DocumentFragment>
+`;
