@@ -17,7 +17,7 @@ export interface HudProps {
   defaultLevel: Level
 }
 
-const HudContainer = tw.header`flex w-full pb-4 items-center justify-between`
+const HudContainer = tw.header`flex pb-4 items-center justify-between`
 
 const Hud = ({ currentLevel, running, shouldClear, levels, mines, onChangeLevel, onReset}: HudProps) => {
   return (

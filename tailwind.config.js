@@ -5,7 +5,11 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'mine': './assets/icons8-naval-min-50.png'
+      },
       colors: {
+        amber: colors.amber,
         slate: colors.slate,
         gray: colors.gray,
         white: colors.white,

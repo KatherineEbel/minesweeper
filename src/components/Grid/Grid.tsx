@@ -11,11 +11,12 @@ export interface GridProps {
 
 const GridContainer = styled.div<{size: number}>`
   display: grid;
-  grid-template-columns: ${({size}) => `repeat(${size}, 2rem)`};
+  grid-template-columns: ${({size}) => `repeat(${size}, 3rem)`};
 `
 
 const Grid = ({field, ...rest}: GridProps) => {
-  return <GridContainer className='mine-field' size={field.length}>
+  const size = field.length
+  return <GridContainer className='mine-field' size={size}>
     {field.map((row: any[], i: any) => {
       return row.map((col, j) => {
         return <Cell key={`${i}-${j}`} cellType={col} coords={[i, j]} {...rest}/>

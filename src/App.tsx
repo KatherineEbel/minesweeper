@@ -1,6 +1,15 @@
 import {Route, Routes, useSearchParams} from 'react-router-dom'
 import React, {Suspense}  from 'react'
 
+const Footer = () => {
+  return (
+    <div className='attribution'>
+      <a className='text-slate-100 mr-1' target="_blank" href="https://icons8.com/icon/47427/naval-mine">Naval Mine</a>
+      icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
+  )
+}
+
 const NotFound = () => {
   return (
     <div className='grid place-items-center min-h-screen'>
@@ -9,18 +18,15 @@ const NotFound = () => {
   )
 }
 
-const Minesweeper = React.lazy(() => import('./pages/Minesweeper'))
+const Minesweeper = React.lazy(() => import('pages/MineSweeper'))
 
 const App = () => {
-  const [searchParams] = useSearchParams()
-  const level = searchParams.get('level') || ''
-
-  console.log(level)
   return (
     <Routes>
       <Route path='/' element={
         <Suspense fallback={<div className='grid place-items-center min-h-screen'>Loading</div>}>
           <Minesweeper/>
+          <Footer/>
         </Suspense>
       }/>
       <Route path='*' element={<NotFound/>}/>

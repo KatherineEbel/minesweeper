@@ -1,0 +1,4624 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MinesweeperRedux changing level 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        044
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-z72vj5"
+        size="16"
+      >
+        <div
+          class="cell-0-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-9-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-10-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-11-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-12-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-13-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-14-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-9 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-10 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-11 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-12 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-13 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-14 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-15-15 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MinesweeperRedux clicking cell 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        010
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-52ne6"
+        size="9"
+      >
+        <div
+          class="cell-0-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-3 css-e4j3k9"
+          role="cell"
+        >
+          2
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-1 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-2 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MinesweeperRedux flagging cell 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        009
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-52ne6"
+        size="9"
+      >
+        <div
+          class="cell-0-0 css-hgqh5v"
+          role="cell"
+        >
+          <div
+            class="css-gtpsz8"
+          >
+            <div
+              class="relative"
+            >
+              <svg>
+                flag_white_24dp.svg
+              </svg>
+              <span
+                class="absolute top-0 text-transparent"
+              >
+                11
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="cell-0-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MinesweeperRedux it renders game field 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        010
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-52ne6"
+        size="9"
+      >
+        <div
+          class="cell-0-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MinesweeperRedux resetting game 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        010
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-52ne6"
+        size="9"
+      >
+        <div
+          class="cell-0-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-0-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-1-3 css-e4j3k9"
+          role="cell"
+        >
+          2
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-1 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-2 css-165cqhf"
+          role="cell"
+        >
+          0
+        </div>
+        <div
+          class="cell-2-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-1 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-2 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-3 css-1c95pj9"
+          role="cell"
+        >
+          1
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MinesweeperRedux resetting game 2`] = `
+<DocumentFragment>
+  <div
+    class="css-1482ep"
+  >
+    <header
+      class="css-p7hpbm"
+    >
+      <h1
+        class="css-9a8zuw"
+      >
+        minesweeper
+      </h1>
+      <legend
+        class="css-11tr1dk"
+      >
+        <strong>
+          flag: 
+        </strong>
+        <code
+          class="css-1eja88o"
+        >
+          <span
+            class="css-14z9opz"
+          >
+            right
+          </span>
+           
+          <span
+            class="text-slate-800"
+          >
+            +
+          </span>
+           
+          <span
+            class="css-1m1v78x"
+          >
+            click
+          </span>
+        </code>
+      </legend>
+    </header>
+    <header
+      class="css-1xy6mwg"
+    >
+      <p
+        class="css-1ke0xfb"
+        role="timer"
+      >
+        000
+      </p>
+      <select
+        class="css-1a3ea01"
+      >
+        <option
+          class=" css-9cl0yr"
+          value="beginner"
+        >
+          beginner
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="intermediate"
+        >
+          intermediate
+        </option>
+        <option
+          class=" css-9cl0yr"
+          value="expert"
+        >
+          expert
+        </option>
+      </select>
+      <button
+        class="css-12o4q79"
+      >
+        🙂
+      </button>
+      <p
+        class="css-1ke0xfb"
+        role="counter"
+      >
+        010
+      </p>
+    </header>
+    <div
+      class="relative"
+    >
+      <div
+        class="css-1gu7ewn"
+      >
+        <span
+          class="hover:rotate-[360deg] hover:scale-150 transition-transform duration-500"
+        >
+          🤕
+        </span>
+      </div>
+      <div
+        class="mine-field css-52ne6"
+        size="9"
+      >
+        <div
+          class="cell-0-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-0-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-1-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-2-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-3-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-4-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-5-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-6-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-7-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-0 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-1 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-2 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-3 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-4 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-5 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-6 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-7 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+        <div
+          class="cell-8-8 css-hgqh5v"
+          role="cell"
+        >
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

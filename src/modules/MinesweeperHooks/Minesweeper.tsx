@@ -1,11 +1,11 @@
-import {GameLevels, Level} from '../lib/game'
-import Header from '../components/Header/Header'
-import Hud from '../components/Hud/Hud'
-import Grid from '../components/Grid/Grid'
+import {GameLevels, Level} from 'lib/game'
+import Header from 'components/Header/Header'
+import Hud from 'components/Hud/Hud'
+import Grid from 'components/Grid/Grid'
 import React, {useCallback} from 'react'
-import {GameWrapper} from '../styles'
-import GameOver from '../components/Game/GameOver'
-import {useMinesweeper} from '../hooks/useMinesweeper'
+import {GameWrapper} from 'styles'
+import GameOver from 'components/Game/GameOver'
+import {useMinesweeper} from 'hooks/useMinesweeper'
 
 
 const Minesweeper = () => {

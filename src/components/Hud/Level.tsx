@@ -8,7 +8,7 @@ export interface LevelProps {
   onLevelChange: React.ChangeEventHandler<HTMLSelectElement>
 }
 
-const Select = tw.select`flex-1 text-center m-0 p-2 text-slate-100 border border-slate-800 bg-slate-600`
+const Select = tw.select`flex-1 text-center m-0 p-2 text-slate-100 focus-visible:border-rose-600 focus-visible:outline-none border border-slate-800 bg-slate-600`
 const Option = tw.option`font-normal block whitespace-nowrap h-6 p-2`
 
 const Level = memo(({levels, onLevelChange, currentLevel}: LevelProps) => {

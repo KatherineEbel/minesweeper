@@ -1,9 +1,9 @@
 import {act, render, screen} from '@testing-library/react'
-import Minesweeper from '../pages/Minesweeper'
+import Minesweeper from 'modules/MinesweeperHooks/Minesweeper'
 import userEvent from '@testing-library/user-event'
-import {CellState} from '../lib/cell'
+import {CellState} from 'lib/cell'
 
-jest.mock('../lib/minesweeper')
+jest.mock('lib/minesweeper')
 
 describe('Minesweeper', () => {
   describe('render', () => {
@@ -163,8 +163,9 @@ describe('Minesweeper', () => {
   describe('onContextMenu', () => {
     test('flagging hidden cell', () => {
       const {container} = render(<Minesweeper/>)
-      userEvent.click(container.querySelector('.cell-0-4')!, {button: 2})
-      expect(screen.getAllByRole('cell', {name: String(CellState.flag)})).toHaveLength(1)
+      const cell = container.querySelector('.cell-0-4')!
+      userEvent.click(cell, {button: 2})
+      expect(screen.getAllByText(String(CellState.flag))).toHaveLength(1)
     })
   })
 

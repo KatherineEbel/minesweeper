@@ -6,12 +6,12 @@
 
 @layer base {
     body {
-        @apply min-h-screen flex flex-col place-items-center bg-slate-900 text-slate-100;
+        @apply bg-slate-900 text-slate-100;
     }
 }
 
 .attribution {
-    @apply mt-auto pb-4
+    @apply mt-auto pb-4 text-center
 }
 
 .attribution a:last-of-type {

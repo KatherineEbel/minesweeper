@@ -3,6 +3,8 @@ import {Cell as CellType, CellState} from 'lib/cell'
 import React, {memo} from 'react'
 import {Coordinates, isActive} from 'lib/helpers/field'
 import {useMouseDown} from 'hooks/useMouseDown'
+import mine from 'assets/icons8-naval-mine-50.png'
+import { ReactComponent as FlagIcon } from 'assets/flag_white_24dp.svg'
 
 const transparent = 'rgba(0,0,0.0)'
 const colors: { [key in CellType]: string } = {
@@ -32,7 +34,7 @@ export interface CellProps {
 }
 
 const CellContainer = tw.div`
-flex items-center justify-center cursor-pointer w-8 h-8 bg-slate-700 border border-slate-600
+flex items-center justify-center cursor-pointer w-12 h-12 bg-slate-700 border border-slate-600
 `
 
 type HiddenCellProps = Pick<CellProps, 'mouseDown'>
@@ -56,25 +58,19 @@ const OpenCell = styled(CellContainer)<Pick<CellProps, 'cellType'>>`
 const EmptyCell = styled(OpenCell)`${tw`text-transparent`}`
 
 const StyledFlag = styled.div`
-  width: 0;
-  height: 0;
-  border-top: .5rem solid transparent;
-  border-bottom: .5rem solid transparent;
+  display: grid;
+  place-items: center;
 `
 
 const Flag = styled(StyledFlag)`
-  border-left: .5rem solid #ec433c;
+  ${tw`text-rose-500`};
 `
 
 const WeakFlag = styled(StyledFlag)`
-  border-left: .5rem solid #fcd34d
+  ${tw`text-amber-200`};
 `
 
-const Mine = tw.div`
-  rounded-full w-4 h-4 bg-slate-900
-`
-
-const MineFrame = tw(OpenCell)`bg-rose-600`
+const MineFrame = tw(OpenCell)`grid place-items-center bg-rose-600`
 
 export const areEqual = (
   prevProps: CellProps,
@@ -116,20 +112,30 @@ const Cell = memo(({cellType, coords, ...rest}: CellProps) => {
       return <EmptyCell {...commonProps}>{cellType}</EmptyCell>
     case CellState.mine:
       return <MineFrame {...commonProps}>
-        <Mine/>
+        <img src={mine} alt='mine'/>
       </MineFrame>
     case CellState.hidden:
       return <HiddenCell {...activeProps}>{cellType}</HiddenCell>
     case CellState.flag:
       return <HiddenCell {...activeProps}>
         <Flag>
-          {cellType}
+          <div className='relative'>
+            <FlagIcon />
+            <span className='absolute top-0 text-transparent'>
+            {cellType}
+            </span>
+          </div>
         </Flag>
       </HiddenCell>
     case CellState.weakFlag:
       return <HiddenCell {...activeProps}>
         <WeakFlag>
-          {cellType}
+          <div className='relative'>
+            <FlagIcon/>
+            <span className='absolute top-0 text-transparent'>
+            {cellType}
+            </span>
+          </div>
         </WeakFlag>
       </HiddenCell>
     default:
